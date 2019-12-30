@@ -4,4 +4,15 @@ watcher is a simple file status monitor service
 
 ## usage 
 
-./watcher -r $DIR
+On Linux
+
+```shell script
+ihexon@gentoo$ chmod +x watcher
+ihexon@gentoo$ ./watcher -r $DIR
+```
+
+Other Platform
+
+```shell script
+java -jar Watcher.jar -r $PATH
+```
