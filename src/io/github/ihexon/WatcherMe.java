@@ -170,7 +170,7 @@ public class WatcherMe {
         // parse arguments
         if (args.length == 0 || args.length > 2)
             usage();
-        boolean recursive = true;
+        boolean recursive = false;
         int dirArg = 0;
         if (args[0].equals("-r")) {
             if (args.length < 2)
