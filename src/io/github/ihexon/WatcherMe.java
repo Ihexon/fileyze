@@ -168,20 +168,20 @@ public class WatcherMe {
 
     public static void main(String[] args) throws IOException {
         // parse arguments
-//        if (args.length == 0 || args.length > 2)
-//            usage();
+        if (args.length == 0 || args.length > 2)
+            usage();
         boolean recursive = true;
-//        int dirArg = 0;
-//        if (args[0].equals("-r")) {
-//            if (args.length < 2)
-//                usage();
-//            recursive = true;
-//            dirArg++;
-//        }
-//        args[dirArg]
+        int dirArg = 0;
+        if (args[0].equals("-r")) {
+            if (args.length < 2)
+                usage();
+            recursive = true;
+            dirArg++;
+        }
+
 
         // register directory and process its events
-        Path dir = Paths.get("/home/yangyunfei/Desktop");
+        Path dir = Paths.get(args[dirArg]);
         new WatcherMe(dir, recursive).processEvents();
     }
 }
