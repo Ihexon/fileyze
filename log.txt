@@ -1,0 +1,2 @@
+2019-12-31-22:50:29: ENTRY_CREATE: /home/yangyunfei/Desktop/1
+2019-12-31-22:50:29: ENTRY_MODIFY: /home/yangyunfei/Desktop/1
