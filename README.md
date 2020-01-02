@@ -1,10 +1,6 @@
 # Watcher
 
-<<<<<<< HEAD
-watcher is a simple file status monitor service
-=======
 Watcher is a simple file status monitor service
->>>>>>> upstream/master
 
 ## usage 
 
@@ -20,8 +16,6 @@ Other Platform
 ```shell script
 java -jar Watcher.jar -r $PATH
 ```
-<<<<<<< HEAD
-=======
 
 ## Contribute
 
