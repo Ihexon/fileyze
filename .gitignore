@@ -1,7 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 # Compiled class file
+<<<<<<< HEAD
 out/**
+=======
+>>>>>>> upstream/master
 *.class
 
 # Log file
