@@ -24,4 +24,3 @@ Platform **JDK >= 8**
 Recommend to Use Intellij IDEA, ISSUE ME PLEASE
 
 Contributer: [IHEXON](https://github.com/ihexon), [FlyingMcDonald](https://github.com/FlyingMcDonald)
->>>>>>> upstream/master
