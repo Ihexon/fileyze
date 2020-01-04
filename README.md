@@ -6,14 +6,14 @@ Watcher is a simple file status monitor service
 
 On Linux
 
-```shell script
+```bash
 ihexon@gentoo$ chmod +x watcher
-ihexon@gentoo$ ./watcher -r $DIR
+ihexon@gentoo$ ./watcher -r `$DIR`
 ```
 
 Other Platform
 
-```shell script
+```bash
 java -jar Watcher.jar -r $PATH
 ```
 
