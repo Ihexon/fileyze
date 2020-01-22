@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/other/MultiException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

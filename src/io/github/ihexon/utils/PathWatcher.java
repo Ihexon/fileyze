@@ -4,6 +4,7 @@ import io.github.ihexon.Config;
 import io.github.ihexon.Loder.AbstractLifeCycle;
 import io.github.ihexon.common.DebugUtils;
 import io.github.ihexon.event.PathWatchEvent;
+import io.github.ihexon.other.MultiException;
 import io.github.ihexon.types.PathWatchEventType;
 import io.github.ihexon.utils.control.Control;
 
@@ -13,9 +14,9 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
-import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
-import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+import static java.nio.file.StandardWatchEventKinds.*;
 
 public class PathWatcher extends AbstractLifeCycle implements Runnable {
 	private WatchService watchService;
@@ -35,6 +36,9 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 	private TimeUnit updateQuietTimeUnit;
 	private long updateQuietTimeDuration;
 	private final List<Config> configs = new ArrayList<>();
+	private static final WatchEvent.Kind<?>[] WATCH_EVENT_KINDS = {ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY};
+	private static final WatchEvent.Kind<?>[] WATCH_DIR_KINDS = {ENTRY_CREATE, ENTRY_DELETE};
+
 
 	public PathWatcher() {
 	}
@@ -109,6 +113,91 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 	@SuppressWarnings("unchecked")
 	protected static <T> WatchEvent<T> cast(WatchEvent<?> event) {
 		return (WatchEvent<T>) event;
+	}
+
+	private void registerDir(Path path, Config config) throws IOException
+	{
+
+		DebugUtils.werrPrintln("registerDir {"+path+"} {"+config+"}");
+
+		if (!Files.isDirectory(path))
+			throw new IllegalArgumentException(path.toString());
+
+		register(path, config.asSubConfig(path), WATCH_DIR_KINDS);
+	}
+
+	private void register(Path path, Config config, WatchEvent.Kind<?>[] kinds) throws IOException
+	{
+		if (watchModifiers != null) {
+			// Java Watcher
+			WatchKey key = path.register(watchService, kinds, watchModifiers);
+			keys.put(key, config);
+		}
+		else {
+			// Native Watcher
+			WatchKey key = path.register(watchService, kinds);
+			keys.put(key, config);
+		}
+	}
+	protected void register(Path path, Config config) throws IOException
+	{
+
+		DebugUtils.werrPrintln("Registering watch on {"+path+"} {"+watchModifiers == null ? null : Arrays.asList(watchModifiers)+"}");
+
+		register(path, config, WATCH_EVENT_KINDS);
+	}
+
+	private void registerTree(Path dir, Config config, boolean notify) throws IOException
+	{
+		DebugUtils.werrPrintln("registerTree {"+dir+"}{"+config+"}{"+notify+"}");
+
+		if (!Files.isDirectory(dir))
+			throw new IllegalArgumentException(dir.toString());
+
+		register(dir, config);
+
+		final MultiException me = new MultiException();
+		try (Stream<Path> stream = Files.list(dir))
+		{
+			stream.forEach(p ->
+			{
+				DebugUtils.werrPrintln("registerTree? {"+p+"}");
+				try
+				{
+					if (notify && config.test(p))
+						pending.put(p, new PathWatchEvent(p, PathWatchEventType.ADDED, config));
+
+					switch (config.handleDir(p))
+					{
+						case ENTER:
+							registerTree(p, config.asSubConfig(p), notify);
+							break;
+						case WATCH:
+							registerDir(p, config);
+							break;
+						case IGNORE:
+						default:
+							break;
+					}
+				}
+				catch (IOException e)
+				{
+					me.add(e);
+				}
+			});
+		}
+		try
+		{
+			me.ifExceptionThrow();
+		}
+		catch (IOException e)
+		{
+			throw e;
+		}
+		catch (Throwable ex)
+		{
+			throw new IOException(ex);
+		}
 	}
 
 	private void handleKey(WatchKey key) {
