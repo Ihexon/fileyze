@@ -13,7 +13,7 @@ import io.github.ihexon.utils.PathWatcher;
 public class Config  implements Predicate<Path> {
 	private static final String PATTERN_SEP;
 	public static final int UNLIMITED_DEPTH = -9999;
-	protected final Path path;
+	public final Path path;
 	protected int recurseDepth = 0; // 0 means no sub-directories are scanned
 	protected boolean excludeHidden = false;
 

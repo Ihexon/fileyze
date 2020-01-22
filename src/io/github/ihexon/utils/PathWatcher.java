@@ -34,7 +34,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 	private Thread thread;
 	private TimeUnit updateQuietTimeUnit;
 	private long updateQuietTimeDuration;
-
+	private final List<Config> configs = new ArrayList<>();
 
 	public PathWatcher() {
 	}
@@ -86,7 +86,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 
 	private long processPending(){
 		if (isDebugEnabled)
-			werrPrintln("processPending> {"+pending.values()+"}");
+			DebugUtils.werrPrintln("processPending> {"+pending.values()+"}");
 		long now = TimeUnit.NANOSECONDS.toMillis(System.nanoTime());
 		long wait = Long.MAX_VALUE;
 		for (PathWatchEvent event : new ArrayList<>(pending.values())){
@@ -147,7 +147,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 							break;
 					}
 				} catch (IOException e) {
-					System.err.println(e.getMessage());
+					DebugUtils.werrPrintln(e.getMessage());
 				}
 			}
 		}
@@ -212,7 +212,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 
 		boolean IS_WINDOWS = Control.getSingleton().getIS_WINDOWS();
 		if ( IS_WINDOWS && (desiredMillis < 1000)) {
-			werrPrintln("Quiet Time is too low for Microsoft Windows: {"+desiredMillis+"} < 1000 ms (defaulting to 1000 ms)");
+			DebugUtils.werrPrintln("Quiet Time is too low for Microsoft Windows: {"+desiredMillis+"} < 1000 ms (defaulting to 1000 ms)");
 			this.updateQuietTimeDuration = 1000;
 			this.updateQuietTimeUnit = TimeUnit.MILLISECONDS;
 			return;
@@ -247,11 +247,18 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 		s.append("]");
 	}
 
+
+	public boolean isNotifyExistingOnStart()
+	{
+		return _notifyExistingOnStart;
+	}
+
+
 	@Override
 	protected void doStart() throws Exception {
 		super.doStart();
 		createWatchService();
-		setUpdateQuietTime(getUpdateQuietTimeMillis(), TimeUnit.MILLISECONDS);
+		setUpdateQuietTime(Control.getSingleton().getUpdateQuietTimeMillis(), TimeUnit.MILLISECONDS);
 		for (Config c : configs)
 		{
 			registerTree(c.getPath(), c, isNotifyExistingOnStart());
@@ -260,7 +267,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 		StringBuilder threadId = new StringBuilder();
 		threadId.append("PathWatcher@");
 		threadId.append(Integer.toHexString(hashCode()));
-		if (isDebugEnabled) werrPrintln("{"+this+"}"+"->"+"{"+threadId+"}");
+		if (isDebugEnabled) DebugUtils.werrPrintln("{"+this+"}"+"->"+"{"+threadId+"}");
 		thread = new Thread(this, threadId.toString());
 		thread.setDaemon(true);
 		thread.start();
@@ -283,7 +290,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 			if (pollingWatchServiceClass.isAssignableFrom(this.watchService.getClass()))
 			{
 				nativeService = false;
-				werrPrintln("Using Non-Native Java {"+pollingWatchServiceClass.getName()+"}");
+				DebugUtils.werrPrintln("Using Non-Native Java {"+pollingWatchServiceClass.getName()+"}");
 				Class<?> c = Class.forName("com.sun.nio.file.SensitivityWatchEventModifier");
 				Field f = c.getField("HIGH");
 				modifiers = new WatchEvent.Modifier[]
@@ -295,7 +302,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 		catch (Throwable t)
 		{
 			// Unknown JVM environment, assuming native.
-			werrPrintln(t);
+			DebugUtils.werrPrintln(t);
 		}
 
 		this.watchModifiers = modifiers;
@@ -313,32 +320,5 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 		pending.clear();
 		events.clear();
 		super.doStop();
-	}
-
-	/**
-	 * Remove all current configs and listeners.
-	 */
-	public void reset()
-	{
-		if (!isStopped())
-			throw new IllegalStateException("PathWatcher must be stopped before reset.");
-
-		configs.clear();
-		listeners.clear();
-	}
-
-	private static void stdPrintln(Object x) {
-		String s = String.valueOf(x);
-		System.out.println(s);
-	}
-
-	private static void werrPrintln(Object x) {
-		String s = String.valueOf(x);
-		System.err.println(s);
-	}
-
-	private static void ErrPrintln(Object x) {
-		String s = String.valueOf(x);
-		System.err.println(s);
 	}
 }
