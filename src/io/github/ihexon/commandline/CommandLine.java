@@ -10,10 +10,16 @@ public class CommandLine {
 	public static final String DAEMON = "--daemon";
 	public static final String DAEMON2 = "-D";
 	public static  boolean reportVersion = false;
-	public static boolean daemon = false;
 
 	public static final String VERSION = "--version";
 	public static final String VERSION2 = "-v";
+
+	// We do not have gui yet,so set this field false
+	private boolean GUI = false;
+	// We do not have daemon yet,so set this field false
+	public static boolean daemon = false;
+	public  static boolean isWeb = false;
+
 
 
 	public final static Hashtable<String,String> keyParis = new Hashtable<>();
@@ -29,6 +35,14 @@ public class CommandLine {
 		this.args = (args == null ? new String[0]:args);
 		parseFirst(this.args);
 	}
+
+	public boolean isGUI() {
+		return GUI;
+	}
+	public boolean isDaemon() {
+		return daemon;
+	}
+
 
 	/**
 	 * parseFirst use to parse the commandline args.
@@ -47,7 +61,7 @@ public class CommandLine {
 	}
 
 	/**
-	 * {@link #checkSwitch(String[], int)} use to check the single flag eg: --version, -v.
+	 * {@link #checkSwitch(String[], int)} use to check the single flag in args .eg: --version, -v.
 	 * @param args the ArrayList of args
 	 * @param i the string[i] of the args ArrayList
 	 * @return boolean
@@ -71,7 +85,7 @@ public class CommandLine {
 	}
 
 	/**
-	 * {@link #checkKeyPairs(String[], int)} use to check the keyParis flag eg: --dir, -d, --daemon, -D.
+	 * {@link #checkKeyPairs(String[], int)} use to check the keyParis flag in args .eg: --dir, -d, --daemon, -D.
 	 * @param args the ArrayList of args
 	 * @param i the string[i] of the args ArrayList
 	 * @return boolean
@@ -92,4 +106,6 @@ public class CommandLine {
 		}
 		return result;
 	}
+
+
 }

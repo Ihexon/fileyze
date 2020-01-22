@@ -12,7 +12,6 @@ public class CommandLineUniteTest {
 		CommandLine commandLine = null;
 		try{
 			commandLine = new CommandLine(args != null ? Arrays.copyOf(args, args.length) : null);
-
 		}catch (final Exception e){
 			System.err.println("Failed due to invalid parameters: "+ Arrays.toString(args));
 			System.err.println(e.getMessage());

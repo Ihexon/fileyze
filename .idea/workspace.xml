@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="CommandLine.java">
-      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/commandline/CommandLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/output/Bootstrap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/output/NullOutputStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/test/CommandLineUniteTest.java" afterDir="false" />
+    <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/CommandLineBootstrap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/IncludeExcludeSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Loder/AbstractLifeCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Loder/LifeCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/OptionsParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/common/DebugUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/event/PathWatchEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/listener/Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/matcher/ExactPathMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/matcher/PathMatcherSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/resources/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/types/DirAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/types/PathWatchEventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/FileCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/AbstractControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/watchme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/xml/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/WatcherMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/WatcherMe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Watcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Watcher.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/WatcherMe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/commandline/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/commandline/CommandLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/output/Bootstrap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/output/NullOutputStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/test/CommandLineUniteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/test/CommandLineUniteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +47,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SCOPE" value="Production" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -44,13 +75,28 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="settings.editor.selected.configurable" value="debugger.dataViews" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/junit-4.12.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.16615573" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
-  <component name="RunManager" selected="Application.CommandLineUniteTest">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.github.ihexon.test" />
+      <recent name="io.github.ihexon.Loder" />
+      <recent name="io.github.ihexon" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Test">
     <configuration name="CommandLineUniteTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.CommandLineUniteTest" />
       <module name="Watcher" />
@@ -65,16 +111,83 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.Main" />
+    <configuration name="CopyOnWriteArrayListExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.CopyOnWriteArrayListExample" />
       <module name="Watcher" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ihexon.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CopyOnWriteArrayListExample2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.CopyOnWriteArrayListExample2" />
+      <module name="Watcher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ihexon.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PathWatchEvent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.event.PathWatchEvent" />
+      <module name="Watcher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ihexon.event.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.Test" />
+      <module name="Watcher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ihexon.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Worker.whenParallelProcessing_thenMainThreadWillBlockUntilCompletion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Watcher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ihexon.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.ihexon.test" />
+      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.Worker" />
+      <option name="METHOD_NAME" value="whenParallelProcessing_thenMainThreadWillBlockUntilCompletion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.Worker.whenParallelProcessing_thenMainThreadWillBlockUntilCompletion" />
+        <item itemvalue="Application.CopyOnWriteArrayListExample2" />
+        <item itemvalue="Application.CopyOnWriteArrayListExample" />
+        <item itemvalue="Application.PathWatchEvent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -99,6 +212,14 @@
       <option name="presentableId" value="Default" />
       <updated>1577811869159</updated>
     </task>
+    <task id="LOCAL-00001" summary="CommandLine.java">
+      <created>1578114538091</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578114538091</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -110,65 +231,109 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="464" y="117" width="1032" height="807" key="#CommandLineUniteTest/0.0.1920.1080@0.0.1920.1080" timestamp="1578073981945" />
+    <state x="0" y="0" width="1920" height="1080" key="#Project_Structure" timestamp="1579510135494">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" width="1920" height="1080" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1579510135494" />
     <state x="455" y="111" width="1000" height="827" key="#args" timestamp="1578073524627">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="455" y="111" width="1000" height="827" key="#args/0.0.1920.1080@0.0.1920.1080" timestamp="1578073524627" />
-    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser" timestamp="1577816111693">
+    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser" timestamp="1579708125749">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577816111693" />
-    <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2" timestamp="1578114412501">
+    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1579708125749" />
+    <state x="630" y="259" width="649" height="532" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1578751720365">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412501" />
-    <state width="567" height="551" key="DebuggerActiveHint" timestamp="1578074247244">
+    <state x="630" y="259" width="649" height="532" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578751720365" />
+    <state x="793" y="190" width="324" height="687" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1579510381989">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="567" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1578074247244" />
-    <state width="1920" height="259" key="GridCell.Tab.0.bottom" timestamp="1578114412660">
+    <state x="793" y="190" width="324" height="687" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579510381989" />
+    <state x="594" y="425" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1578751722833">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412660" />
-    <state width="1920" height="259" key="GridCell.Tab.0.center" timestamp="1578114412655">
+    <state x="594" y="425" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1080@0.0.1920.1080" timestamp="1578751722833" />
+    <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579371020005">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412655" />
-    <state width="1920" height="259" key="GridCell.Tab.0.left" timestamp="1578114412652">
+    <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579371020005" />
+    <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2" timestamp="1578114537746">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412652" />
-    <state width="1920" height="259" key="GridCell.Tab.0.right" timestamp="1578114412658">
+    <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578114537746" />
+    <state width="567" height="551" key="DebuggerActiveHint" timestamp="1578934649057">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412658" />
-    <state width="1920" height="259" key="GridCell.Tab.1.bottom" timestamp="1578114412660">
+    <state width="567" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1578934649057" />
+    <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl" timestamp="1579510379759">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412660" />
-    <state width="1920" height="259" key="GridCell.Tab.1.center" timestamp="1578114412660">
+    <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1579510379759" />
+    <state width="995" height="302" key="GridCell.Tab.0.bottom" timestamp="1578942232491">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412660" />
-    <state width="1920" height="259" key="GridCell.Tab.1.left" timestamp="1578114412660">
+    <state width="995" height="302" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578942232491" />
+    <state width="995" height="302" key="GridCell.Tab.0.center" timestamp="1578942232475">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412660" />
-    <state width="1920" height="259" key="GridCell.Tab.1.right" timestamp="1578114412660">
+    <state width="995" height="302" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578942232475" />
+    <state width="995" height="302" key="GridCell.Tab.0.left" timestamp="1578942232471">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="259" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578114412660" />
-    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1578073807816">
+    <state width="995" height="302" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578942232471" />
+    <state width="995" height="302" key="GridCell.Tab.0.right" timestamp="1578942232486">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1578073807816" />
-    <state x="496" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1577865901912">
+    <state width="995" height="302" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578942232486" />
+    <state width="1920" height="484" key="GridCell.Tab.1.bottom" timestamp="1578939414235">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="496" y="329" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577865901912" />
-    <state x="392" y="410" width="1126" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1578071982483">
+    <state width="1920" height="484" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578939414235" />
+    <state width="1920" height="484" key="GridCell.Tab.1.center" timestamp="1578939414234">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="392" y="410" width="1126" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1578071982483" />
+    <state width="1920" height="484" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578939414234" />
+    <state width="1920" height="484" key="GridCell.Tab.1.left" timestamp="1578939414234">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="484" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578939414234" />
+    <state width="1920" height="484" key="GridCell.Tab.1.right" timestamp="1578939414234">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="484" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578939414234" />
+    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1579704857693">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1579704857693" />
+    <state x="484" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1579422276547">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="484" y="204" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579422276547" />
+    <state x="392" y="410" width="1116" height="248" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579510306256">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="392" y="410" width="1116" height="248" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1579510306256" />
+    <state x="384" y="231" width="1142" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579526077751">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="384" y="231" width="1142" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1579526077750" />
+    <state x="430" y="288" width="1320" height="622" key="dock-window-1" timestamp="1579524967699">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="430" y="288" width="1320" height="622" key="dock-window-1/0.0.1920.1080@0.0.1920.1080" timestamp="1579524967699" />
+    <state x="475" y="204" width="969" height="654" key="find.popup" timestamp="1579538209811">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="475" y="204" width="969" height="654" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1579538209811" />
+    <state x="614" y="78" width="682" height="893" key="refactoring.ChangeSignatureDialog" timestamp="1578744756777">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="614" y="78" width="682" height="893" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578744756777" />
+    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup" timestamp="1579711503228">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1579711503228" />
   </component>
 </project>
