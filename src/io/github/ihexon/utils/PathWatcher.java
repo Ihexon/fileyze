@@ -13,6 +13,7 @@ import java.lang.reflect.Field;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
@@ -36,15 +37,32 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 	private TimeUnit updateQuietTimeUnit;
 	private long updateQuietTimeDuration;
 	private final List<Config> configs = new ArrayList<>();
+	private final List<EventListener> listeners = new CopyOnWriteArrayList<>(); //a listener may modify the listener list directly or by stopping the PathWatcher
 	private static final WatchEvent.Kind<?>[] WATCH_EVENT_KINDS = {ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY};
 	private static final WatchEvent.Kind<?>[] WATCH_DIR_KINDS = {ENTRY_CREATE, ENTRY_DELETE};
 
+
+	public void watch(final Config config)
+	{
+		//Add a custom config
+		configs.add(config);
+	}
 
 	public PathWatcher() {
 	}
 
 
 
+	public interface EventListListener extends EventListener
+	{
+		void onPathWatchEvents(List<PathWatchEvent> events);
+	}
+
+
+	public void addListener(EventListener listener)
+	{
+		listeners.add(listener);
+	}
 
 
 
@@ -142,7 +160,7 @@ public class PathWatcher extends AbstractLifeCycle implements Runnable {
 	protected void register(Path path, Config config) throws IOException
 	{
 
-		DebugUtils.werrPrintln("Registering watch on {"+path+"} {"+watchModifiers == null ? null : Arrays.asList(watchModifiers)+"}");
+//		DebugUtils.werrPrintln("Registering watch on {"+path+"} {"+watchModifiers == null ? null : Arrays.asList(watchModifiers)+"}");
 
 		register(path, config, WATCH_EVENT_KINDS);
 	}

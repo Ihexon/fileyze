@@ -32,6 +32,12 @@ public class PathWatchEvent {
 		check();
 	}
 
+	@Deprecated
+	public int getCount()
+	{
+		return 1;
+	}
+
 	public PathWatchEvent(Path path, WatchEvent<Path> event, Config config) {
 		this.path = path;
 		if (event.kind() == ENTRY_CREATE){

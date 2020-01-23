@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 public class Control extends AbstractControl {
 	private static Control control = null;
 	public static final boolean IS_WINDOWS;
+	public static boolean isDebug = true;
 	static
 	{
 		String os = System.getProperty("os.name");
