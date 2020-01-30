@@ -2,12 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/ExcludeHiddenSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/PathWatchEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/listener/EventListListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/listener/EventListenerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/matcher/TestDirFileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/WatchDir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Loder/AbstractLifeCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Loder/AbstractLifeCycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/event/PathWatchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/event/PathWatchEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/CommandLineBootstrap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Constant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/IncludeExcludeSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Loder/AbstractLifeCycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/OptionsParam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/commandline/CommandLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/event/PathWatchEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/listener/Listener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/matcher/ExactPathMatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/matcher/PathMatcherSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/test/CommandLineUniteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/types/PathWatchEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/FileCopier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/AbstractControl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/watchme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +92,10 @@
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.github.ihexon.listener" />
+      <recent name="io.github.ihexon" />
       <recent name="io.github.ihexon.test" />
       <recent name="io.github.ihexon.Loder" />
-      <recent name="io.github.ihexon" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -74,19 +103,6 @@
       <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.CommandLineUniteTest" />
       <module name="Watcher" />
       <option name="PROGRAM_PARAMETERS" value="-d yyf --dir zzh" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.ihexon.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CopyOnWriteArrayListExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.test.CopyOnWriteArrayListExample" />
-      <module name="Watcher" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.ihexon.test.*" />
@@ -113,7 +129,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.ihexon.Main" />
       <module name="Watcher" />
-      <option name="PROGRAM_PARAMETERS" value="/tmp/zzh" />
+      <option name="PROGRAM_PARAMETERS" value="-r -d /tmp/zzh" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.ihexon.*" />
@@ -130,6 +146,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.ihexon.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WatchDir" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.ihexon.utils.WatchDir" />
+      <module name="Watcher" />
+      <option name="PROGRAM_PARAMETERS" value="-r /tmp/yyf" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.ihexon.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,10 +186,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.WatchDir" />
         <item itemvalue="Application.Test" />
         <item itemvalue="JUnit.Worker.whenParallelProcessing_thenMainThreadWillBlockUntilCompletion" />
         <item itemvalue="Application.CopyOnWriteArrayListExample2" />
-        <item itemvalue="Application.CopyOnWriteArrayListExample" />
       </list>
     </recent_temporary>
   </component>
@@ -205,22 +235,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="464" y="117" width="1032" height="807" key="#CommandLineUniteTest/0.0.1920.1080@0.0.1920.1080" timestamp="1578073981945" />
-    <state x="448" y="121" width="1014" height="807" key="#Main" timestamp="1579714755771">
+    <state x="448" y="121" width="1032" height="807" key="#Main" timestamp="1580389365063">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="448" y="121" width="1014" height="807" key="#Main/0.0.1920.1080@0.0.1920.1080" timestamp="1579714755771" />
+    <state x="448" y="121" width="1032" height="807" key="#Main/0.0.1920.1080@0.0.1920.1080" timestamp="1580389365063" />
     <state x="0" y="0" width="1920" height="1080" key="#Project_Structure" timestamp="1579510135494">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" width="1920" height="1080" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1579510135494" />
+    <state x="448" y="121" width="1014" height="807" key="#WatchDir" timestamp="1580149126428">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="448" y="121" width="1014" height="807" key="#WatchDir/0.0.1920.1080@0.0.1920.1080" timestamp="1580149126428" />
     <state x="455" y="111" width="1000" height="827" key="#args" timestamp="1578073524627">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="455" y="111" width="1000" height="827" key="#args/0.0.1920.1080@0.0.1920.1080" timestamp="1578073524627" />
-    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser" timestamp="1579713964689">
+    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser" timestamp="1580389862497">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1579713964689" />
+    <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1580389862497" />
     <state x="630" y="259" width="649" height="532" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1578751720365">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -233,58 +267,62 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="594" y="425" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1080@0.0.1920.1080" timestamp="1578751722833" />
-    <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579371020005">
+    <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580223315983">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579371020005" />
-    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate" timestamp="1579715663022">
+    <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580223315983" />
+    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate" timestamp="1580380013571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1579715663022" />
+    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1580380013571" />
     <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2" timestamp="1578114537746">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578114537746" />
-    <state width="567" height="551" key="DebuggerActiveHint" timestamp="1578934649057">
+    <state width="568" height="551" key="DebuggerActiveHint" timestamp="1580393338887">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="567" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1578934649057" />
+    <state width="568" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1580393338887" />
     <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl" timestamp="1579510379759">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1579510379759" />
-    <state width="1920" height="484" key="GridCell.Tab.0.bottom" timestamp="1579766992769">
+    <state width="1920" height="484" key="GridCell.Tab.0.bottom" timestamp="1580393981299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992769" />
-    <state width="1920" height="484" key="GridCell.Tab.0.center" timestamp="1579766992768">
+    <state width="1920" height="484" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981299" />
+    <state width="1920" height="484" key="GridCell.Tab.0.center" timestamp="1580393981298">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992768" />
-    <state width="1920" height="484" key="GridCell.Tab.0.left" timestamp="1579766992765">
+    <state width="1920" height="484" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981298" />
+    <state width="1920" height="484" key="GridCell.Tab.0.left" timestamp="1580393981298">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992765" />
-    <state width="1920" height="484" key="GridCell.Tab.0.right" timestamp="1579766992769">
+    <state width="1920" height="484" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981298" />
+    <state width="1920" height="484" key="GridCell.Tab.0.right" timestamp="1580393981299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992769" />
-    <state width="1920" height="484" key="GridCell.Tab.1.bottom" timestamp="1579766992515">
+    <state width="1920" height="484" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981299" />
+    <state width="1920" height="484" key="GridCell.Tab.1.bottom" timestamp="1580393981301">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992515" />
-    <state width="1920" height="484" key="GridCell.Tab.1.center" timestamp="1579766992514">
+    <state width="1920" height="484" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981301" />
+    <state width="1920" height="484" key="GridCell.Tab.1.center" timestamp="1580393981300">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992514" />
-    <state width="1920" height="484" key="GridCell.Tab.1.left" timestamp="1579766992514">
+    <state width="1920" height="484" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981300" />
+    <state width="1920" height="484" key="GridCell.Tab.1.left" timestamp="1580393981299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992514" />
-    <state width="1920" height="484" key="GridCell.Tab.1.right" timestamp="1579766992515">
+    <state width="1920" height="484" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981299" />
+    <state width="1920" height="484" key="GridCell.Tab.1.right" timestamp="1580393981300">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1579766992515" />
+    <state width="1920" height="484" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580393981300" />
+    <state x="710" y="211" width="490" height="627" key="RollbackChangesDialog" timestamp="1580386434942">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="710" y="211" width="490" height="627" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580386434942" />
     <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1579704857693">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -297,10 +335,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="392" y="410" width="1116" height="248" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1579510306256" />
-    <state x="384" y="231" width="1142" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579715728348">
+    <state x="384" y="231" width="1142" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1580393030909">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="384" y="231" width="1142" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1579715728348" />
+    <state x="384" y="231" width="1142" height="738" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1580393030909" />
     <state x="430" y="288" width="1320" height="622" key="dock-window-1" timestamp="1579524967699">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -309,29 +347,44 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="475" y="204" width="969" height="654" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1579538209811" />
-    <state x="614" y="78" width="682" height="893" key="refactoring.ChangeSignatureDialog" timestamp="1578744756777">
+    <state x="614" y="78" width="682" height="893" key="refactoring.ChangeSignatureDialog" timestamp="1580224630553">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="614" y="78" width="682" height="893" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578744756777" />
+    <state x="614" y="78" width="682" height="893" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580224630553" />
     <state x="540" y="242" key="run.anything.popup" timestamp="1579713129970">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="540" y="242" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1579713129970" />
-    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup" timestamp="1579764456067">
+    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup" timestamp="1580390021524">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1579764456067" />
+    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580390021524" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/utils/PathWatcher.java</url>
-          <line>69</line>
-          <properties class="io.github.ihexon.utils.PathWatcher" method="run">
+          <url>file://$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java</url>
+          <line>41</line>
+          <properties class="io.github.ihexon.PathWatcher" method="registerAll">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
