@@ -12,6 +12,8 @@ abstract class AbstractBootstrap {
 		controlOverrides.setPath(getArgs().getArgument("-d"));
 		controlOverrides.setRecurse(getArgs().getArgument("-r"));
 		controlOverrides.setExcludeHidden(getArgs().getArgument("--exclude-hidden"));
+		controlOverrides.setShowHelp(getArgs().getArgument("--help"));
+		controlOverrides.setShowHelp(getArgs().getArgument("-h"));
 	}
 
 	protected ControlOverrides getControlOverrides() {

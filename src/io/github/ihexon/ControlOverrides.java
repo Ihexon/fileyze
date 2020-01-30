@@ -8,6 +8,8 @@ public class ControlOverrides {
 	private Path path = null;
 	private boolean recurse = false;
 	private boolean excludeHidden = false;
+	private boolean showHelp = true;
+	private boolean showVersion =true;
 
 	public ControlOverrides(){
 	}
@@ -24,6 +26,15 @@ public class ControlOverrides {
 	public void setExcludeHidden(String s){
 		if (s != null&&s.equalsIgnoreCase("true"))
 			this.excludeHidden = true;
+	}
+
+	public void setShowHelp(String s){
+		if (s != null&&s.equalsIgnoreCase("true"))
+			this.showHelp = true;
+	}
+
+	public boolean getShowHelp(){
+		 return	this.showHelp;
 	}
 
 	public boolean getRecurse(){

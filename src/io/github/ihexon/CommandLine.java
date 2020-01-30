@@ -7,12 +7,17 @@ public class CommandLine {
 	public static final String DIR = "-d";
 	public static final String RECURSE = "-r";
 	public static final String EXCLUDEHIDDEN = "--exclude-hidden";
+	public static final String HELP0x00 ="-h";
+	public static final String HELP0x01 ="--help";
+	public static final String VERSION0x00 =  "--version";
+	public static final String VERSION0x01 =  "-v";
+
 	private String[] args;
 	private final Hashtable<String, String> keywords = new Hashtable<>();
 	public CommandLine(String[] args) throws Exception {
 		this.args = args == null ? new String[0] : args;
-		keywords.put(RECURSE,"false");
-		keywords.put(DIR, "");
+
+		// 开始解析参数
 		parseArgs(this.args);
 	}
 
@@ -23,6 +28,8 @@ public class CommandLine {
 		}
 	}
 
+	// 解析配对参数
+	// 如 -dir xxx是配对参数
 	private boolean parseKeywords(String[] args, int i) throws Exception {
 		boolean result = false;
 		if (checkPair(args, DIR, i)) {
@@ -33,6 +40,21 @@ public class CommandLine {
 		return result;
 	}
 
+	// 解析CMD开关参数
+	// 如--help -r -v --version是开关参数
+	private boolean parseSwitchs(String[] args, int i) throws Exception {
+		boolean result = false;
+		if (checkSwitch(args, RECURSE, i)) {
+			result = true;
+		}else if (checkSwitch(args, HELP0x00, i)) {
+			result = true;
+		}if (checkSwitch(args, HELP0x01, i)) {
+			result = true;
+		}
+		return  result;
+	}
+
+	// 解析配对参数
 	private boolean checkPair(String[] args, String paramName, int i) throws Exception {
 		String key = args[i];
 		String value = null;
@@ -52,27 +74,14 @@ public class CommandLine {
 		return false;
 	}
 
-	private boolean parseSwitchs(String[] args, int i) throws Exception {
-		boolean result = false;
-		if (checkSwitch(args, RECURSE, i)) {
-			result = true;
-		}
-		return  result;
-	}
-
-
+	// 解析CMD开关参数
 	private boolean checkSwitch(String[] args, String paramName, int i) throws Exception {
 		String key = args[i];
-		String value = null;
 		if (key == null) {
 			return false;
 		}
 
 		if (key.equalsIgnoreCase(paramName)) {
-			value = args[i + 1];
-			if (value.equalsIgnoreCase("false"))
-				keywords.put(paramName, "false");
-			else
 				keywords.put(paramName, "true");
 			args[i] = null;
 			return true;

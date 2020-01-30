@@ -1,5 +1,6 @@
 package io.github.ihexon;
 
+import io.github.ihexon.other.HelpClass;
 import io.github.ihexon.utils.control.Control;
 
 import java.io.IOException;
@@ -18,8 +19,12 @@ public class Bootstrap extends AbstractBootstrap {
 	public void start() throws IOException {
 		super.start();
 		initControl();
-		PathWatcher pathWatcher = new PathWatcher();
-
-		pathWatcher.processEvents();
+		if (Control.getSingleton().showHelp){
+			new HelpClass();
+			System.exit(1);
+		}else {
+			PathWatcher pathWatcher = new PathWatcher();
+			pathWatcher.processEvents();
+		}
 	}
 }

@@ -10,6 +10,7 @@ public class Control {
 	public Path dir;
 	public boolean isDebug = true;
 	public boolean excludeHidden = false;
+	public boolean showHelp = true;
 
 	public static Control getSingleton() {
 		return control;
@@ -24,6 +25,7 @@ public class Control {
 		this.dir = overrides.getPath();
 		this.recursive = overrides.getRecurse();
 		this.excludeHidden = overrides.getExcludeHidden();
+		this.showHelp = overrides.getShowHelp();
 	}
 
 

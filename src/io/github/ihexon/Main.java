@@ -16,7 +16,7 @@ public class Main {
 			cmdLine = new CommandLine(args != null ? Arrays.copyOf(args, args.length) : null);
 		} catch (final Exception e) {
 			System.out.println("Failed due to invalid parameters: " + Arrays.toString(args));
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			System.out.println("Use '-h' for more details.");
 			System.exit(1);
 		}

@@ -23,6 +23,7 @@ public class PathWatchEvent {
 		} else {
 			this.type = PathWatchEventType.UNKNOWN;
 		}
+
 		if (! type.equals(PathWatchEventType.DELETED))
 			check();
 	}
