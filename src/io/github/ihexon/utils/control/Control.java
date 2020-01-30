@@ -1,5 +1,6 @@
 package io.github.ihexon.utils.control;
 
+import io.github.ihexon.CommandLine;
 import io.github.ihexon.ControlOverrides;
 
 import java.nio.file.Path;
@@ -10,7 +11,7 @@ public class Control {
 	public Path dir;
 	public boolean isDebug = true;
 	public boolean excludeHidden = false;
-	public boolean showHelp = true;
+	public boolean showHelp = false;
 
 	public static Control getSingleton() {
 		return control;

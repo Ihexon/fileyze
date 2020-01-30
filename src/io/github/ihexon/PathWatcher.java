@@ -55,6 +55,10 @@ public class PathWatcher {
 	}
 
 	private void register(Path dir) throws IOException {
+		if (dir == null){
+			DebugUtils.werrPrintln("Please point a directory to be monitor, eg -d /home/test/die1");
+			System.exit(1);
+		}
 		WatchKey key = dir.register(watcher, WATCH_EVENT_KINDS);
 		if (trace) {
 			Path prev = keys.get(key);

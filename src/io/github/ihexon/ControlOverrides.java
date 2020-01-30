@@ -9,39 +9,42 @@ public class ControlOverrides {
 	private boolean recurse = false;
 	private boolean excludeHidden = false;
 	private boolean showHelp = true;
-	private boolean showVersion =true;
+	private boolean showVersion = true;
 
-	public ControlOverrides(){
+	public ControlOverrides() {
 	}
 
 	public void setPath(String s) {
-		if (s != null) this.path = Paths.get(s);
+		if (s != null) {
+			this.showHelp = false;
+			this.path = Paths.get(s);
+		}
 	}
 
 	public void setRecurse(String s) {
-		if (s != null&&s.equalsIgnoreCase("true"))
-		this.recurse = true;
+		if (s != null && s.equalsIgnoreCase("true"))
+			this.recurse = true;
 	}
 
-	public void setExcludeHidden(String s){
-		if (s != null&&s.equalsIgnoreCase("true"))
+	public void setExcludeHidden(String s) {
+		if (s != null && s.equalsIgnoreCase("true"))
 			this.excludeHidden = true;
 	}
 
-	public void setShowHelp(String s){
-		if (s != null&&s.equalsIgnoreCase("true"))
+	public void setShowHelp(String s) {
+		if (s != null && s.equalsIgnoreCase("true"))
 			this.showHelp = true;
 	}
 
-	public boolean getShowHelp(){
-		 return	this.showHelp;
+	public boolean getShowHelp() {
+		return this.showHelp;
 	}
 
-	public boolean getRecurse(){
+	public boolean getRecurse() {
 		return recurse;
 	}
 
-	public Path getPath(){
+	public Path getPath() {
 		return path;
 	}
 

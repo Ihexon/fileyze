@@ -2,9 +2,7 @@ package io.github.ihexon;
 
 import io.github.ihexon.common.DebugUtils;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.Arrays;
 
 public class Main {
@@ -16,7 +14,6 @@ public class Main {
 			cmdLine = new CommandLine(args != null ? Arrays.copyOf(args, args.length) : null);
 		} catch (final Exception e) {
 			System.out.println("Failed due to invalid parameters: " + Arrays.toString(args));
-			e.printStackTrace();
 			System.out.println("Use '-h' for more details.");
 			System.exit(1);
 		}
@@ -26,6 +23,5 @@ public class Main {
 		} catch (IOException e){
 			DebugUtils.werrPrintln(e.getMessage());
 		}
-
 	}
 }

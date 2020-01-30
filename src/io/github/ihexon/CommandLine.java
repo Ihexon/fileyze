@@ -80,7 +80,6 @@ public class CommandLine {
 		if (key == null) {
 			return false;
 		}
-
 		if (key.equalsIgnoreCase(paramName)) {
 				keywords.put(paramName, "true");
 			args[i] = null;
@@ -90,6 +89,6 @@ public class CommandLine {
 	}
 
 	public String getArgument(String keyword) {
-		return keywords.get(keyword);
+			return keywords.get(keyword);
 	}
 }

@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/io/github/ihexon/other/HelpClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Watcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Watcher.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/PathWatchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/PathWatchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +103,6 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.ihexon.Main" />
       <module name="Watcher" />
-      <option name="PROGRAM_PARAMETERS" value="-r -d /tmp/zzh --help" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.ihexon.*" />
@@ -212,10 +208,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="464" y="117" width="1032" height="807" key="#CommandLineUniteTest/0.0.1920.1080@0.0.1920.1080" timestamp="1578073981945" />
-    <state x="448" y="121" width="1032" height="807" key="#Main" timestamp="1580397656096">
+    <state x="448" y="121" width="1032" height="807" key="#Main" timestamp="1580401807199">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="448" y="121" width="1032" height="807" key="#Main/0.0.1920.1080@0.0.1920.1080" timestamp="1580397656096" />
+    <state x="448" y="121" width="1032" height="807" key="#Main/0.0.1920.1080@0.0.1920.1080" timestamp="1580401807199" />
     <state x="0" y="0" width="1920" height="1080" key="#Project_Structure" timestamp="1579510135494">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -248,54 +244,54 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="630" y="223" width="649" height="603" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580223315983" />
-    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate" timestamp="1580380013571">
+    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate" timestamp="1580399786704">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1580380013571" />
+    <state x="754" y="190" width="401" height="669" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1580399786704" />
     <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2" timestamp="1578114537746">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="421" y="78" width="1067" height="893" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578114537746" />
-    <state width="568" height="551" key="DebuggerActiveHint" timestamp="1580398242389">
+    <state width="568" height="551" key="DebuggerActiveHint" timestamp="1580399492340">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="568" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1580398242389" />
+    <state width="568" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1580399492340" />
     <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl" timestamp="1580395279021">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1580395279021" />
-    <state width="1920" height="484" key="GridCell.Tab.0.bottom" timestamp="1580398341012">
+    <state width="1920" height="579" key="GridCell.Tab.0.bottom" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341012" />
-    <state width="1920" height="484" key="GridCell.Tab.0.center" timestamp="1580398341011">
+    <state width="1920" height="579" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
+    <state width="1920" height="579" key="GridCell.Tab.0.center" timestamp="1580402341000">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341011" />
-    <state width="1920" height="484" key="GridCell.Tab.0.left" timestamp="1580398341010">
+    <state width="1920" height="579" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341000" />
+    <state width="1920" height="579" key="GridCell.Tab.0.left" timestamp="1580402341000">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341010" />
-    <state width="1920" height="484" key="GridCell.Tab.0.right" timestamp="1580398341012">
+    <state width="1920" height="579" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341000" />
+    <state width="1920" height="579" key="GridCell.Tab.0.right" timestamp="1580402341000">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341012" />
-    <state width="1920" height="484" key="GridCell.Tab.1.bottom" timestamp="1580398341017">
+    <state width="1920" height="579" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341000" />
+    <state width="1920" height="579" key="GridCell.Tab.1.bottom" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341017" />
-    <state width="1920" height="484" key="GridCell.Tab.1.center" timestamp="1580398341014">
+    <state width="1920" height="579" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
+    <state width="1920" height="579" key="GridCell.Tab.1.center" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341014" />
-    <state width="1920" height="484" key="GridCell.Tab.1.left" timestamp="1580398341013">
+    <state width="1920" height="579" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
+    <state width="1920" height="579" key="GridCell.Tab.1.left" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341013" />
-    <state width="1920" height="484" key="GridCell.Tab.1.right" timestamp="1580398341015">
+    <state width="1920" height="579" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
+    <state width="1920" height="579" key="GridCell.Tab.1.right" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="484" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580398341015" />
+    <state width="1920" height="579" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
     <state x="710" y="211" width="490" height="627" key="RollbackChangesDialog" timestamp="1580386434942">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -332,10 +328,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="540" y="242" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1579713129970" />
-    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup" timestamp="1580397516620">
+    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup" timestamp="1580402369776">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580397516620" />
+    <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580402369776" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -358,7 +354,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java</url>
-          <line>58</line>
+          <line>62</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -370,6 +366,16 @@
           <url>file://$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java</url>
           <line>78</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -19,12 +19,12 @@ public class Bootstrap extends AbstractBootstrap {
 	public void start() throws IOException {
 		super.start();
 		initControl();
-		if (Control.getSingleton().showHelp){
-			new HelpClass();
-			System.exit(1);
-		}else {
+		if (!Control.getSingleton().showHelp){
 			PathWatcher pathWatcher = new PathWatcher();
 			pathWatcher.processEvents();
+		}else {
+			new HelpClass();
+			System.exit(1);
 		}
 	}
 }
