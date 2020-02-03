@@ -14,6 +14,8 @@ abstract class AbstractBootstrap {
 		controlOverrides.setExcludeHidden(getArgs().getArgument("--exclude-hidden"));
 		controlOverrides.setShowHelp(getArgs().getArgument("--help"));
 		controlOverrides.setShowHelp(getArgs().getArgument("-h"));
+		controlOverrides.setLogFile(getArgs().getArgument("--log"));
+		controlOverrides.setCustomLogFile(getArgs().getArgument("--custom-log-file"));
 	}
 
 	protected ControlOverrides getControlOverrides() {

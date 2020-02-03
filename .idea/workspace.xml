@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Watcher:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Watcher_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Bootstrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/ExcludeHiddenSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/ExcludeHiddenSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/common/DebugUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/common/PrintUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/listener/EventListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/listener/EventListenerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/other/HelpClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/other/HelpClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +66,13 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/junit-4.12.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16615573" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -188,6 +201,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577811869159</updated>
+      <workItem from="1580567214320" duration="27000" />
+      <workItem from="1580567284735" duration="7258000" />
+      <workItem from="1580626292903" duration="4022000" />
+      <workItem from="1580729623290" duration="5746000" />
     </task>
     <task id="LOCAL-00001" summary="CommandLine.java">
       <created>1578114538091</created>
@@ -198,6 +215,9 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CommandLine.java" />
@@ -224,6 +244,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="455" y="111" width="1000" height="827" key="#args/0.0.1920.1080@0.0.1920.1080" timestamp="1578073524627" />
+    <state x="691" y="292" width="528" height="480" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1580628643449">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="691" y="292" width="528" height="480" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580628643449" />
     <state x="724" y="183" width="462" height="702" key="#com.intellij.ide.util.MemberChooser" timestamp="1580389862497">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -232,6 +256,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="630" y="259" width="649" height="532" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578751720365" />
+    <state x="774" y="223" width="529" height="427" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580622011116">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="774" y="223" width="529" height="427" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580622011116" />
+    <state x="789" y="402" width="328" height="212" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580567290790">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="789" y="402" width="328" height="212" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580567290790" />
     <state x="793" y="190" width="324" height="687" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1579510381989">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -260,22 +292,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1580395279021" />
-    <state width="1920" height="579" key="GridCell.Tab.0.bottom" timestamp="1580402341001">
+    <state width="1872" height="206" key="GridCell.Tab.0.bottom" timestamp="1580734978661">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="579" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
-    <state width="1920" height="579" key="GridCell.Tab.0.center" timestamp="1580402341000">
+    <state width="1872" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978661" />
+    <state width="1872" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
+    <state width="1872" height="206" key="GridCell.Tab.0.center" timestamp="1580734978660">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="579" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341000" />
-    <state width="1920" height="579" key="GridCell.Tab.0.left" timestamp="1580402341000">
+    <state width="1872" height="206" key="GridCell.Tab.0.center/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978660" />
+    <state width="1872" height="207" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
+    <state width="1872" height="206" key="GridCell.Tab.0.left" timestamp="1580734978660">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="579" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341000" />
-    <state width="1920" height="579" key="GridCell.Tab.0.right" timestamp="1580402341000">
+    <state width="1872" height="206" key="GridCell.Tab.0.left/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978660" />
+    <state width="1872" height="207" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
+    <state width="1872" height="206" key="GridCell.Tab.0.right" timestamp="1580734978660">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="579" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341000" />
+    <state width="1872" height="206" key="GridCell.Tab.0.right/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978660" />
+    <state width="1872" height="207" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
     <state width="1920" height="579" key="GridCell.Tab.1.bottom" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -296,14 +332,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="710" y="211" width="490" height="627" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580386434942" />
-    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1580395169852">
+    <state x="372" y="39" width="1350" height="850" key="SettingsEditor" timestamp="1580729651099">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1580395169852" />
-    <state x="484" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1579422276547">
+    <state x="372" y="39" key="SettingsEditor/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580729651099" />
+    <state x="374" y="63" width="1350" height="850" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1580622035255" />
+    <state x="476" y="108" key="com.intellij.ide.util.TipDialog" timestamp="1580729652569">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="484" y="204" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579422276547" />
+    <state x="476" y="108" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580729652569" />
+    <state x="478" y="132" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580626298691" />
     <state x="392" y="410" width="1116" height="248" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579510306256">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -332,52 +370,5 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="506" y="45" width="906" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580402369776" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java</url>
-          <line>39</line>
-          <properties class="io.github.ihexon.PathWatcher" method="registerAll">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java</url>
-          <line>16</line>
-          <properties class="io.github.ihexon.CommandLine" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

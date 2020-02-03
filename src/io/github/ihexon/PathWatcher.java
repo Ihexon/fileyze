@@ -1,6 +1,6 @@
 package io.github.ihexon;
 
-import io.github.ihexon.common.DebugUtils;
+import io.github.ihexon.common.PrintUtils;
 import io.github.ihexon.listener.EventListListener;
 import io.github.ihexon.listener.EventListenerImpl;
 import io.github.ihexon.utils.control.Control;
@@ -18,7 +18,7 @@ public class PathWatcher {
 	private final Map<WatchKey, Path> keys;
 	private final boolean recursive;
 	private boolean trace = false;
-	private Path path = null;
+	String LOG_FILE = null;
 	private static final WatchEvent.Kind<?>[] WATCH_EVENT_KINDS = {ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY};
 
 
@@ -26,14 +26,24 @@ public class PathWatcher {
 		this.watcher = FileSystems.getDefault().newWatchService();
 		this.keys = new HashMap<>();
 		this.recursive = Control.getSingleton().recursive;
-		this.path = Control.getSingleton().dir;
+		boolean logFile = Control.getSingleton().logFile;
+		String customLogFile = Control.getSingleton().customLogFile;
+		Path path = Control.getSingleton().dir;
+		if (logFile && customLogFile == null){
+			this.LOG_FILE = "log.txt";
+			PrintUtils.setPrintln(this.LOG_FILE);
+		} else if (customLogFile != null){
+			this.LOG_FILE = customLogFile;
+			PrintUtils.setPrintln(this.LOG_FILE);
+		}
 		if (recursive) {
-			System.out.format("Scanning %s ...\n", this.path);
+			System.out.format("Scanning %s ...\n", path);
 			registerAll(path);
-			System.out.println("Done.");
 		} else {
+			System.out.format("Add monitoring dir %s ...\n", path);
 			register(path);
 		}
+		System.out.println("Done.");
 		this.trace = true;
 	}
 
@@ -56,7 +66,7 @@ public class PathWatcher {
 
 	private void register(Path dir) throws IOException {
 		if (dir == null){
-			DebugUtils.werrPrintln("Please point a directory to be monitor, eg -d /home/test/die1");
+			PrintUtils.werrPrintln("Please point a directory to be monitor, eg -d /home/test/die1");
 			System.exit(1);
 		}
 		WatchKey key = dir.register(watcher, WATCH_EVENT_KINDS);
@@ -82,6 +92,7 @@ public class PathWatcher {
 
 	private void handleKey(WatchKey key) {
 		EventListListener listener = new EventListenerImpl();
+
 		for (WatchEvent<?> event : key.pollEvents()) {
 			WatchEvent.Kind kind = event.kind();
 			if (kind == OVERFLOW) {
@@ -124,7 +135,7 @@ public class PathWatcher {
 				pending.put(path, event);
 				break;
 			case UNKNOWN:
-				DebugUtils.werrPrintln("Un-know event");
+				PrintUtils.werrPrintln("Un-know event");
 				break;
 		}
 	}
@@ -147,7 +158,7 @@ public class PathWatcher {
 			if (key != null) {
 				handleKey(key);
 			} else {
-				DebugUtils.werrPrintln("Watchkey is null");
+				PrintUtils.werrPrintln("Watchkey is null");
 			}
 			boolean valid = key.reset();
 			if (! valid) {

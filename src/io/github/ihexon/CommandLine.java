@@ -11,14 +11,15 @@ public class CommandLine {
 	public static final String HELP0x01 ="--help";
 	public static final String VERSION0x00 =  "--version";
 	public static final String VERSION0x01 =  "-v";
+	public static final String LOGFILE = "--log";
+	public static final String CUSTOMLOGFILE = "--custom-log-file";
 
-	private String[] args;
 	private final Hashtable<String, String> keywords = new Hashtable<>();
 	public CommandLine(String[] args) throws Exception {
-		this.args = args == null ? new String[0] : args;
+		String[] args1 = args == null ? new String[0] : args;
 
 		// 开始解析参数
-		parseArgs(this.args);
+		parseArgs(args1);
 	}
 
 	private void parseArgs(String[] args)  throws Exception{
@@ -34,7 +35,9 @@ public class CommandLine {
 		boolean result = false;
 		if (checkPair(args, DIR, i)) {
 			result = true;
-		}else if(checkPair(args, EXCLUDEHIDDEN, i) ){
+		}else if (checkPair(args, EXCLUDEHIDDEN, i) ){
+			result = true;
+		}else if (checkPair(args, CUSTOMLOGFILE, i)	){
 			result = true;
 		}
 		return result;
@@ -48,7 +51,9 @@ public class CommandLine {
 			result = true;
 		}else if (checkSwitch(args, HELP0x00, i)) {
 			result = true;
-		}if (checkSwitch(args, HELP0x01, i)) {
+		}else if (checkSwitch(args, HELP0x01, i)) {
+			result = true;
+		} if (checkSwitch(args, LOGFILE, i)) {
 			result = true;
 		}
 		return  result;

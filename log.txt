@@ -1,0 +1,6 @@
+Add monitoring dir /tmp/123 ...
+Done.
+{Event: [ADDED] /tmp/123/123 (File size=0)}
+{Event: [MODIFIED] /tmp/123/123 (File size=0)}
+{Event: [ADDED] /tmp/123/1234 (File size=0)}
+{Event: [MODIFIED] /tmp/123/1234 (File size=0)}

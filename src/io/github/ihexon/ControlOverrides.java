@@ -6,10 +6,12 @@ import java.nio.file.Paths;
 
 public class ControlOverrides {
 	private Path path = null;
+	private String customLogFile = null;
 	private boolean recurse = false;
 	private boolean excludeHidden = false;
 	private boolean showHelp = true;
 	private boolean showVersion = true;
+	private boolean logFile = false;
 
 	public ControlOverrides() {
 	}
@@ -36,12 +38,32 @@ public class ControlOverrides {
 			this.showHelp = true;
 	}
 
+	public void setLogFile(String s) {
+		if (s != null && s.equalsIgnoreCase("true"))
+			this.logFile = true;
+	}
+
+	public boolean getLogFile() {
+		return this.logFile;
+	}
+
+	public void setCustomLogFile(String s){
+		if (s != null){
+			this.showHelp = false;
+			this.customLogFile = s;
+		}
+	}
+
+	public String getCustomLogFile(){
+		return this.customLogFile;
+	}
+
 	public boolean getShowHelp() {
 		return this.showHelp;
 	}
 
 	public boolean getRecurse() {
-		return recurse;
+		return this.recurse;
 	}
 
 	public Path getPath() {
