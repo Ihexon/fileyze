@@ -26,16 +26,7 @@ public class PathWatcher {
 		this.watcher = FileSystems.getDefault().newWatchService();
 		this.keys = new HashMap<>();
 		this.recursive = Control.getSingleton().recursive;
-		boolean logFile = Control.getSingleton().logFile;
-		String customLogFile = Control.getSingleton().customLogFile;
 		Path path = Control.getSingleton().dir;
-		if (logFile && customLogFile == null){
-			this.LOG_FILE = "log.txt";
-			PrintUtils.setPrintln(this.LOG_FILE);
-		} else if (customLogFile != null){
-			this.LOG_FILE = customLogFile;
-			PrintUtils.setPrintln(this.LOG_FILE);
-		}
 		if (recursive) {
 			System.out.format("Scanning %s ...\n", path);
 			registerAll(path);

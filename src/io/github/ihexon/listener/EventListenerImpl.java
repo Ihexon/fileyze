@@ -26,6 +26,6 @@ public class EventListenerImpl implements EventListListener {
 				PrintUtils.werrPrintln("Unable to get File size"+e);
 			}
 		}
-		PrintUtils.stdPrintln(msg.toString());
+		PrintUtils.getSingleton().info(msg.toString());
 	}
 }

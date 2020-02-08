@@ -1,29 +1,27 @@
 package io.github.ihexon.common;
 
+import io.github.ihexon.ControlOverrides;
 import io.github.ihexon.logutils.AppenderAttachableImpl;
 import io.github.ihexon.spi.LoggingEvent;
 import io.github.ihexon.utils.control.Control;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 
 public class PrintUtils {
+
+	private static PrintUtils printUtils = null;
 
 	Appender ConsoleAppender;
 	Appender FileAppender;
 	AppenderAttachableImpl aai;
 
+	public static PrintUtils getSingleton() {
+		return printUtils;
+	}
 
-	public static void setPrintln(String s) {
-		try {
-			PrintStream ps = new PrintStream(new FileOutputStream(s));
-			System.setErr(ps);
-			System.setOut(ps);
-		} catch (FileNotFoundException e) {
-			System.err.format("File %s not found", s);
-		}
+	public static void initSingleton(Control control) throws IOException {
+		printUtils = new PrintUtils();
+		printUtils.init(control);
 	}
 
 	public static void stdPrintln(Object x) {
@@ -37,6 +35,14 @@ public class PrintUtils {
 	}
 
 
+	private void init(Control control) throws IOException {
+		ConsoleAppender = new ConsoleAppender();
+		addAppender(ConsoleAppender);
+		if (control.logFile != null){
+			FileAppender = new FileAppender(control.logFile.toString());
+			addAppender(FileAppender);
+		}
+	}
 
 	public void info(Object message) {
 		Log(message, null);
@@ -62,16 +68,6 @@ public class PrintUtils {
 	}
 
 	private void callAppenders(LoggingEvent event) {
-		if (ConsoleAppender == null){
-		ConsoleAppender = new ConsoleAppender();
-		addAppender(ConsoleAppender);
-		}
-		if (FileAppender == null){
-				FileAppender = new FileAppender();
-				((FileAppender) FileAppender).setFile("/tmp/zzh");
-				FileAppender.activateOptions();
-				addAppender(FileAppender);
-		}
 		aai.appendLoopOnAppenders(event);
 	}
 
@@ -79,13 +75,5 @@ public class PrintUtils {
 		if (aai != null){
 			aai.closeNestedAppenders();
 		}
-	}
-
-	// Test Code
-	public static void main(String[] args) {
-		PrintUtils printUtils = new PrintUtils();
-		printUtils.info("YYF F**K YOU !");
-		printUtils.info("15 RMB !F**K YOU");
-		printUtils.closeAppenders();
 	}
 }

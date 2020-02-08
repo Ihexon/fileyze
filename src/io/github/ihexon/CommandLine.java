@@ -12,14 +12,14 @@ public class CommandLine {
 	public static final String VERSION0x00 =  "--version";
 	public static final String VERSION0x01 =  "-v";
 	public static final String LOGFILE = "--log";
-	public static final String CUSTOMLOGFILE = "--custom-log-file";
+	String[] args;
 
 	private final Hashtable<String, String> keywords = new Hashtable<>();
 	public CommandLine(String[] args) throws Exception {
-		String[] args1 = args == null ? new String[0] : args;
+		args = args == null ? new String[0] : args;
 
 		// 开始解析参数
-		parseArgs(args1);
+		parseArgs(args);
 	}
 
 	private void parseArgs(String[] args)  throws Exception{
@@ -37,7 +37,7 @@ public class CommandLine {
 			result = true;
 		}else if (checkPair(args, EXCLUDEHIDDEN, i) ){
 			result = true;
-		}else if (checkPair(args, CUSTOMLOGFILE, i)	){
+		}else if (checkPair(args, LOGFILE, i)	){
 			result = true;
 		}
 		return result;
@@ -52,8 +52,6 @@ public class CommandLine {
 		}else if (checkSwitch(args, HELP0x00, i)) {
 			result = true;
 		}else if (checkSwitch(args, HELP0x01, i)) {
-			result = true;
-		} if (checkSwitch(args, LOGFILE, i)) {
 			result = true;
 		}
 		return  result;
@@ -95,5 +93,8 @@ public class CommandLine {
 
 	public String getArgument(String keyword) {
 			return keywords.get(keyword);
+	}
+	public String getArgument(int i) {
+		return args[i];
 	}
 }
