@@ -1,15 +1,20 @@
 package io.github.ihexon.common;
 
+import io.github.ihexon.logutils.AppenderAttachableImpl;
 import io.github.ihexon.spi.LoggingEvent;
+import io.github.ihexon.utils.control.Control;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.util.Enumeration;
 
 public class PrintUtils {
-	Appender appender;
+
+	Appender ConsoleAppender;
+	Appender FileAppender;
+	AppenderAttachableImpl aai;
+
 
 	public static void setPrintln(String s) {
 		try {
@@ -46,17 +51,33 @@ public class PrintUtils {
 		callAppenders(new LoggingEvent(message, t));
 	}
 
-	private void callAppenders(LoggingEvent event) {
-		if (appender == null){
-		appender = new ConsoleAppender();
+
+	synchronized
+	public
+	void addAppender(Appender newAppender) {
+		if(aai == null) {
+			aai = new AppenderAttachableImpl();
 		}
-		appender.doAppend(event);
+		aai.addAppender(newAppender);
 	}
 
-	synchronized void closeAppenders() {
-		Appender a = (Appender) appender;
-		if (a instanceof WriterAppender) {
-			a.close();
+	private void callAppenders(LoggingEvent event) {
+		if (ConsoleAppender == null){
+		ConsoleAppender = new ConsoleAppender();
+		addAppender(ConsoleAppender);
+		}
+		if (FileAppender == null){
+				FileAppender = new FileAppender();
+				((FileAppender) FileAppender).setFile("/tmp/zzh");
+				FileAppender.activateOptions();
+				addAppender(FileAppender);
+		}
+		aai.appendLoopOnAppenders(event);
+	}
+
+	public void closeAppenders() {
+		if (aai != null){
+			aai.closeNestedAppenders();
 		}
 	}
 
@@ -64,7 +85,7 @@ public class PrintUtils {
 	public static void main(String[] args) {
 		PrintUtils printUtils = new PrintUtils();
 		printUtils.info("YYF F**K YOU !");
-		printUtils.info("10 RMB !F**K YOU");
+		printUtils.info("15 RMB !F**K YOU");
 		printUtils.closeAppenders();
 	}
 }

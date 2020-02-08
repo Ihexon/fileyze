@@ -85,9 +85,9 @@ public class WriterAppender extends AppenderSkeleton {
 		reset();
 	}
 
-	private void writeFooter(){
+	private void writeFooter() {
 		String f = "----------- WatchMe End -----------\n";
-		if(f != null && this.qw != null) {
+		if (f != null && this.qw != null) {
 			this.qw.write(f);
 			this.qw.flush();
 		}
@@ -113,23 +113,20 @@ public class WriterAppender extends AppenderSkeleton {
 		writeHeader();
 	}
 
-	protected
-	void writeHeader() {
-			String h = "----------- WatchMe Start -----------\n";
-			if(h != null && this.qw != null)
-				this.qw.write(h);
+	protected void writeHeader() {
+		String h = "----------- WatchMe Start -----------\n";
+		if (h != null && this.qw != null)
+			this.qw.write(h);
 	}
 
 
-	protected
-	OutputStreamWriter createWriter(OutputStream os) {
+	protected OutputStreamWriter createWriter(OutputStream os) {
 		OutputStreamWriter retval = null;
 		String enc = getEncoding();
-
-		if(enc != null) {
+		if (enc != null) {
 			try {
 				retval = new OutputStreamWriter(os, enc);
-			} catch(IOException e) {
+			} catch (IOException e) {
 				if (e instanceof InterruptedIOException) {
 					Thread.currentThread().interrupt();
 				}
@@ -137,8 +134,7 @@ public class WriterAppender extends AppenderSkeleton {
 				System.err.println("Unsupported encoding?");
 			}
 		}
-
-		if(retval == null) {
+		if (retval == null) {
 			retval = new OutputStreamWriter(os);
 		}
 		return retval;
@@ -147,7 +143,12 @@ public class WriterAppender extends AppenderSkeleton {
 	public String getEncoding() {
 		return encoding;
 	}
+
 	public void setEncoding(String value) {
 		encoding = value;
+	}
+
+	@Override
+	public void activateOptions() {
 	}
 }

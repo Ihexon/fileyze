@@ -41,6 +41,7 @@ public class ConsoleAppender extends WriterAppender {
 		return target;
 	}
 
+	@Override
 	public void activateOptions() {
 		if (follow) {
 			if (target.equals(SYSTEM_ERR)) {
