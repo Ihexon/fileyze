@@ -13,6 +13,7 @@ public class Control {
 	public boolean excludeHidden = false;
 	public boolean showHelp = false;
 	public boolean logFile = false;
+	public String logfile = "/tmp/watchme.log";
 
 	public static Control getSingleton() {
 		return control;

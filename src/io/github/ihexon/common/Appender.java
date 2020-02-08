@@ -8,4 +8,6 @@ public interface Appender {
 	public void doAppend(LoggingEvent event);
 
 	public String getName();
+
+	public void activateOptions();
 }

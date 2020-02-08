@@ -1,11 +1,12 @@
 package io.github.ihexon.common;
 
+import io.github.ihexon.utils.control.Control;
 import sun.tools.tree.InstanceOfExpression;
 
 import java.io.*;
 
 public class FileAppender extends WriterAppender {
-	protected boolean append = true;
+	protected boolean append = false;
 	protected String fileName = null;
 	protected boolean bufferedIO = false;
 	protected int bufferSize = 8 * 1024;
@@ -13,15 +14,18 @@ public class FileAppender extends WriterAppender {
 	public FileAppender() {
 	}
 
+	// DO NOT USE DIRECTORY !!!
 	public FileAppender(String filename, boolean fileAppend, boolean bufferedIO,
 	                    int bufferSize) throws IOException {
 		this.setFile(filename, append, bufferedIO, bufferSize);
 	}
 
+	// DO NOT USE DIRECTORY !!!
 	public FileAppender(String filename) throws IOException {
 		this(filename, true);
 	}
 
+	// DO NOT USE DIRECTORY !!!
 	public FileAppender(String filename, boolean append)
 			throws IOException {
 		this.setFile(filename, append, false, bufferSize);
@@ -65,55 +69,54 @@ public class FileAppender extends WriterAppender {
 
 	// DO NOT USE !!!
 	public void activateOptions() {
-		if(fileName != null) {
+		if (fileName != null) {
 			try {
 				setFile(fileName, append, bufferedIO, bufferSize);
-			} catch(java.io.IOException e) {
-				System.err.println("setFile("+fileName+","+append+") call failed."+" "+ErrorCode.FILE_OPEN_FAILURE);
+			} catch (java.io.IOException e) {
+				System.err.println("setFile(" + fileName + "," + append + ") call failed." + " " + ErrorCode.FILE_OPEN_FAILURE);
 				e.printStackTrace();
 			}
-		}else {
-			String  s1= "File option not set for appender ["+name+"].";
-			String s2="Are you using FileAppender instead of ConsoleAppender?";
+		} else {
+			String s1 = "File option not set for appender [" + name + "].";
+			String s2 = "Are you using FileAppender instead of ConsoleAppender?";
 			System.err.println(s1);
 			System.err.println(s2);
 		}
 	}
 
 
-		/**
-		 * Closes the previously opened file.
-		 */
-		private void closeFile () {
-			if (this.qw != null) {
-				try {
-					this.qw.close();
-				} catch (IOException e) {
-					if (e instanceof InterruptedIOException)
-						Thread.currentThread().interrupt();
-				}
+	/**
+	 * Closes the previously opened file.
+	 */
+	private void closeFile() {
+		if (this.qw != null) {
+			try {
+				this.qw.close();
+			} catch (IOException e) {
+				if (e instanceof InterruptedIOException)
+					Thread.currentThread().interrupt();
 			}
 		}
-
-		protected void reset () {
-			closeFile();
-			this.fileName = null;
-			super.reset();
-		}
-
-		public void setFile (String file){
-			String val = file.trim();
-			this.fileName = val;
-		}
-
-
-		public String getFile () {
-			return fileName;
-		}
-
-		public boolean getAppend () {
-			return append;
-		}
-
-
 	}
+
+	protected void reset() {
+		closeFile();
+		this.fileName = null;
+		super.reset();
+	}
+
+	public void setFile (String filename) {
+		this.fileName = filename.trim();
+	}
+
+
+	public String getFile() {
+		return fileName;
+	}
+
+	public boolean getAppend() {
+		return append;
+	}
+
+
+}

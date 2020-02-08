@@ -11,9 +11,6 @@ public abstract class AppenderSkeleton implements Appender {
 	}
 
 	@Override
-	public void close() {}
-
-	@Override
 	public synchronized void doAppend(LoggingEvent event) {
 		if (closed) {
 			System.err.println("Attempted to append to closed appender named [" + name + "].");

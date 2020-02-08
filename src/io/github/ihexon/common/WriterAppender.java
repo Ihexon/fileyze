@@ -7,7 +7,7 @@ import java.io.*;
 public class WriterAppender extends AppenderSkeleton {
 
 	protected boolean immediateFlush = true;
-	protected String encoding = "UFT8";
+	protected String encoding;
 	protected QuietWriter qw;
 
 	public WriterAppender() {
@@ -146,5 +146,9 @@ public class WriterAppender extends AppenderSkeleton {
 
 	public void setEncoding(String value) {
 		encoding = value;
+	}
+
+	@Override
+	public void activateOptions() {
 	}
 }
