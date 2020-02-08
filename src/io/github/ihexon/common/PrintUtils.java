@@ -2,14 +2,15 @@ package io.github.ihexon.common;
 
 import io.github.ihexon.spi.LoggingEvent;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.util.Enumeration;
 
 public class PrintUtils {
-	Appender appender;
+
+	Appender ConsoleAppender;
+	Appender FileAppender;
 
 	public static void setPrintln(String s) {
 		try {
@@ -47,16 +48,27 @@ public class PrintUtils {
 	}
 
 	private void callAppenders(LoggingEvent event) {
-		if (appender == null){
-		appender = new ConsoleAppender();
+		if (ConsoleAppender == null){
+		ConsoleAppender = new ConsoleAppender();
+		}		if (FileAppender == null){
+			try {
+				FileAppender = new FileAppender("/tmp/zzh");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		appender.doAppend(event);
+		ConsoleAppender.doAppend(event);
+		FileAppender.doAppend(event);
 	}
 
 	synchronized void closeAppenders() {
-		Appender a = (Appender) appender;
-		if (a instanceof WriterAppender) {
-			a.close();
+		Appender a0 = (Appender) ConsoleAppender;
+		Appender a1 = (Appender) FileAppender;
+		if (a0 instanceof WriterAppender) {
+			a0.close();
+		}
+		if (a1 instanceof WriterAppender) {
+			((WriterAppender) a1).close();
 		}
 	}
 
@@ -64,7 +76,7 @@ public class PrintUtils {
 	public static void main(String[] args) {
 		PrintUtils printUtils = new PrintUtils();
 		printUtils.info("YYF F**K YOU !");
-		printUtils.info("10 RMB !F**K YOU");
+		printUtils.info("15 RMB !F**K YOU");
 		printUtils.closeAppenders();
 	}
 }
