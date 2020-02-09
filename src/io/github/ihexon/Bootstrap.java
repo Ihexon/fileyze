@@ -26,8 +26,9 @@ public class Bootstrap extends AbstractBootstrap {
 	}
 
 	@Override
-	public void start() throws IOException {
-		super.start();
+	public int start() throws IOException {
+		int rc = super.start();
+		if (rc != 0) return rc;
 		initControl();
 		initPrintUtils();
 		if (!Control.getSingleton().showHelp){
@@ -37,5 +38,6 @@ public class Bootstrap extends AbstractBootstrap {
 			new HelpClass();
 			System.exit(1);
 		}
+		return rc;
 	}
 }

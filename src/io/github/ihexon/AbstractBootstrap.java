@@ -21,7 +21,14 @@ abstract class AbstractBootstrap {
 		return controlOverrides;
 	}
 
-	public void start() throws IOException {
+	public int start() throws IOException {
+		try {
+			Constant.getInstance();
+		} catch (final Throwable e) {
+			System.err.println(e.getMessage());
+			return 1;
+		}
+		return 0;
 	}
 
 	protected CommandLine getArgs() {
