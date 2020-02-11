@@ -2,6 +2,8 @@ package io.github.ihexon.common;
 
 public interface ErrorCode {
 
+		public final int CONTROL_NULL = -2;
+
 		public final int GENERIC_FAILURE = 0;
 		public final int WRITE_FAILURE = 1;
 		public final int FLUSH_FAILURE = 2;

@@ -1,7 +1,6 @@
 package io.github.ihexon.common;
 
 import io.github.ihexon.utils.control.Control;
-import sun.tools.tree.InstanceOfExpression;
 
 import java.io.*;
 
@@ -22,7 +21,7 @@ public class FileAppender extends WriterAppender {
 
 	// DO NOT USE DIRECTORY !!!
 	public FileAppender(String filename) throws IOException {
-		this(filename, true);
+		this(filename, false);
 	}
 
 	// DO NOT USE DIRECTORY !!!

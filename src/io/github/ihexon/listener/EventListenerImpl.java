@@ -2,6 +2,7 @@ package io.github.ihexon.listener;
 
 import io.github.ihexon.PathWatchEvent;
 import io.github.ihexon.common.PrintUtils;
+import io.github.ihexon.services.logsystem.Log;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,6 +27,6 @@ public class EventListenerImpl implements EventListListener {
 				PrintUtils.werrPrintln("Unable to get File size"+e);
 			}
 		}
-		PrintUtils.getSingleton().info(msg.toString());
+		Log.getInstance().info(msg.toString());
 	}
 }

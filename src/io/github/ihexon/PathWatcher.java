@@ -3,6 +3,7 @@ package io.github.ihexon;
 import io.github.ihexon.common.PrintUtils;
 import io.github.ihexon.listener.EventListListener;
 import io.github.ihexon.listener.EventListenerImpl;
+import io.github.ihexon.services.logsystem.Log;
 import io.github.ihexon.utils.control.Control;
 
 import java.io.IOException;
@@ -149,7 +150,7 @@ public class PathWatcher {
 			if (key != null) {
 				handleKey(key);
 			} else {
-				PrintUtils.werrPrintln("Watchkey is null");
+				Log.getInstance().info("Watchkey is null");
 			}
 			boolean valid = key.reset();
 			if (! valid) {

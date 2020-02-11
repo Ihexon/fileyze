@@ -1,6 +1,7 @@
 package io.github.ihexon.other;
 
 import io.github.ihexon.common.PrintUtils;
+import io.github.ihexon.services.logsystem.Log;
 
 public class HelpClass {
 
@@ -14,7 +15,7 @@ public class HelpClass {
 					"--exclude-hidden   : exclude the hidden directory\n" +
 					"--log	[dir]			: output events to log file\n" +
 					"--help & -h        : show help\n");
-		PrintUtils.stdPrintln(msg);
+		Log.getInstance().info(msg);
 	}
 
 }

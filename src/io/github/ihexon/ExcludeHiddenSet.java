@@ -1,6 +1,7 @@
 package io.github.ihexon;
 
 import io.github.ihexon.common.PrintUtils;
+import io.github.ihexon.services.logsystem.Log;
 import io.github.ihexon.utils.control.Control;
 
 import java.io.IOException;
@@ -32,7 +33,7 @@ public class ExcludeHiddenSet implements Predicate<Path> {
 	public boolean test(Path path) {
 		if (Control.getSingleton().excludeHidden && isHidden(path)){
 			if (Control.getSingleton().isDebug)
-				PrintUtils.stdPrintln("test({"+(path.toString())+"}) -> [Hidden]");
+				Log.getInstance().info("test({" + (path.toString()) + "}) -> [Hidden]");
 			return true;
 		}
 		return false;
