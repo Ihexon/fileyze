@@ -1,7 +1,6 @@
 package io.github.ihexon.listener;
 
 import io.github.ihexon.PathWatchEvent;
-import io.github.ihexon.common.PrintUtils;
 import io.github.ihexon.services.logsystem.Log;
 
 import java.io.IOException;
@@ -27,7 +26,7 @@ public class EventListenerImpl implements EventListListener {
 				String fileSize = String.format(" (File size=%,d)", Files.size(event.getPath()));
 				msg.append(fileSize);
 			} catch (IOException e) {
-				PrintUtils.werrPrintln("Unable to get File size"+e);
+				Log.getInstance().info("Unable to get File size"+e);
 			}
 		}
 		Log.getInstance().info(msg.toString());

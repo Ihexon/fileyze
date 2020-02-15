@@ -128,7 +128,7 @@ public class CommandLine {
 //            ie.include("^/|(/[a-zA-Z0-9_-]+)+$");
             if (!isValidExistingDirectory(value.trim())) {
                 Log.getInstance().info("Error parameter  '" +key.trim()+ "'");
-                Log.getInstance().info("The dir is not exist or wrong path name");
+                Log.getInstance().info("The path is not exist or is not a dir");
                 Log.getInstance().closeAppenders();
                 System.exit(-1);
             }

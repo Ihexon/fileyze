@@ -20,7 +20,7 @@
 
 package io.github.ihexon;
 
-import io.github.ihexon.common.PrintUtils;
+import io.github.ihexon.services.logsystem.Log;
 import io.github.ihexon.utils.FileCopier;
 
 import java.io.File;
@@ -135,7 +135,7 @@ public class Constant {
 				}
 				path = sourceLocation.toString();
 			} catch (URISyntaxException e) {
-				PrintUtils.werrPrintln("Failed to determine the ZAP installation dir: \n" + e.getMessage());
+				Log.getInstance().info("Failed to determine the ZAP installation dir: \n" + e.getMessage());
 				path = localDir.toAbsolutePath().toString();
 			}
 			System.out.println("Defaulting ZAP install dir to " + path);

@@ -56,11 +56,9 @@ public class Bootstrap extends AbstractBootstrap {
 
     private void StartImpl() throws IOException {
 
-//        List<String> excludes = new ArrayList<>();
-//        excludes.add("glob:*.bak"); // ignore backup files
-//        excludes.add("regex:^.*/\\~[^/]*$"); // ignore scratch files
-
         PathWatcher pathWatcher = new PathWatcher();
+//        pathWatcher.regist();
+
         pathWatcher.processEvents();
     }
 }

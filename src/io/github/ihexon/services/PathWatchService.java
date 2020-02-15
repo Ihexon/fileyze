@@ -18,38 +18,7 @@
  * This Copyright copy from shadowsocks-libev. with little modified
  **************************************************************************************************/
 
-package io.github.ihexon;
+package io.github.ihexon.services;
 
-import io.github.ihexon.services.logsystem.Log;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Objects;
-
-public class Main {
-	// initialize PrintUtils FIRST !
-	private final static Log logger = Log.getInstance();
-
-	public static void main(String[] args) {
-		String s[] = args != null ? Arrays.copyOf(args, args.length) : null;
-		CommandLine cmdLine = null;
-		try {
-			cmdLine = new CommandLine(args != null ? Arrays.copyOf(args, args.length) : null);
-		} catch (final Exception e) {
-			logger.info("Failed due to invalid parameters: " + Arrays.toString(args));
-			if (e instanceof ArrayIndexOutOfBoundsException){
-				int i = (Integer.parseInt(e.getMessage()))-1;
-				logger.info(Objects.requireNonNull(s)[i] + " need one value");
-			}
-			logger.info("Use '-h' for more details.");
-			System.exit(1);
-		}
-		Bootstrap demo = new Bootstrap(cmdLine);
-		try {
-			demo.start();
-		} catch (IOException e){
-			Log.getInstance().info(e.getMessage());
-
-		}
-	}
+public class PathWatchService {
 }

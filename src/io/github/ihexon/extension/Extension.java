@@ -18,38 +18,29 @@
  * This Copyright copy from shadowsocks-libev. with little modified
  **************************************************************************************************/
 
-package io.github.ihexon;
+package io.github.ihexon.extension;
 
-import io.github.ihexon.services.logsystem.Log;
+public interface Extension {
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Objects;
+    /**
+     * Returns the name of the extension, for configurations and access from other components (e.g.
+     * extensions).
+     *
+     * @return the name of the extension, never {@code null}
+     */
+    String getName();
 
-public class Main {
-	// initialize PrintUtils FIRST !
-	private final static Log logger = Log.getInstance();
+    /**
+     * Returns the description of the extension, to be shown in UI components. The description must
+     * be internationalised.
+     *
+     * @return the description of the extension, never {@code null}
+     */
+    String getDescription();
 
-	public static void main(String[] args) {
-		String s[] = args != null ? Arrays.copyOf(args, args.length) : null;
-		CommandLine cmdLine = null;
-		try {
-			cmdLine = new CommandLine(args != null ? Arrays.copyOf(args, args.length) : null);
-		} catch (final Exception e) {
-			logger.info("Failed due to invalid parameters: " + Arrays.toString(args));
-			if (e instanceof ArrayIndexOutOfBoundsException){
-				int i = (Integer.parseInt(e.getMessage()))-1;
-				logger.info(Objects.requireNonNull(s)[i] + " need one value");
-			}
-			logger.info("Use '-h' for more details.");
-			System.exit(1);
-		}
-		Bootstrap demo = new Bootstrap(cmdLine);
-		try {
-			demo.start();
-		} catch (IOException e){
-			Log.getInstance().info(e.getMessage());
+    /** Initialize plugin during startup. This phase is carried out before all others. */
+    void init();
 
-		}
-	}
+
+
 }

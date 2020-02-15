@@ -26,10 +26,4 @@ package io.github.ihexon.common;
  * @see io.github.ihexon.services.logsystem.Log
  */
 public class PrintUtils {
-
-	public static void werrPrintln(Object x) {
-		String s = String.valueOf(x);
-		System.err.println(s);
-	}
-
 }

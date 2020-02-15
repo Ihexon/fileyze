@@ -20,7 +20,6 @@
 
 package io.github.ihexon.utils;
 
-import io.github.ihexon.common.PrintUtils;
 import io.github.ihexon.services.logsystem.Log;
 import io.github.ihexon.utils.control.Control;
 
@@ -63,7 +62,7 @@ public class BigFilter implements Predicate<Path> {
             }
             return Files.exists(path) && Files.isHidden(path);
         } catch (IOException e) {
-            PrintUtils.werrPrintln(e);
+            Log.getInstance().info(e);
             return false;
         }
     }

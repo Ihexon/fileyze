@@ -30,8 +30,6 @@ public class Control {
         String LOGFILE = commandLine.LOGFILE;
         String RECURSE = commandLine.RECURSE;
         String EXCLUDES = commandLine.EXCLUDES_HID;
-        String HELP0x00 = commandLine.HELP0x00;
-        String HELP0x01 = commandLine.HELP0x01;
         String regex = commandLine.getKeyPair(commandLine.EXCLUDEREGX);
 
         this.recursive = commandLine.getSwitchs(RECURSE);
@@ -41,8 +39,7 @@ public class Control {
                 commandLine.getKeyPair(LOGFILE) != null
                         && commandLine.getKeyPair(LOGFILE).length() != 0 ?
                         new File(commandLine.getKeyPair(LOGFILE)) : null;
-        this.showHelp = commandLine.getSwitchs(HELP0x00);
-        this.showHelp = commandLine.getSwitchs(HELP0x01);
+
 
         // add regex exclude , params -ex [regex]
         if (regex != null && regex.length() != 0) {
@@ -72,7 +69,10 @@ public class Control {
     private Path getMonitorPath(CommandLine commandLine) {
         // the params must have a dir to monitor, like -d [dir], than set showHelp to false.
         // otherwise show help message
-        this.showHelp = false;
+        if (commandLine.getKeyPair(DIR) == null){
+            return null;
+        }
+        this.showHelp=false;
         return Paths.get(commandLine.getKeyPair(DIR));
     }
 

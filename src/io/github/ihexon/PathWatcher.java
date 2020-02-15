@@ -1,6 +1,5 @@
 package io.github.ihexon;
 
-import io.github.ihexon.common.PrintUtils;
 import io.github.ihexon.listener.EventListListener;
 import io.github.ihexon.listener.EventListenerImpl;
 import io.github.ihexon.services.logsystem.Log;
@@ -59,7 +58,7 @@ public class PathWatcher {
 
     private void register(Path dir) throws IOException {
         if (dir == null) {
-            PrintUtils.werrPrintln("Please point a directory to be monitor, eg -d /home/test/die1");
+            Log.getInstance().info("Please point a directory to be monitor, eg -d /home/test/die1");
             System.exit(1);
         }
         WatchKey key = dir.register(watcher, WATCH_EVENT_KINDS);
@@ -133,7 +132,7 @@ public class PathWatcher {
                 }
                 break;
             case UNKNOWN:
-                PrintUtils.werrPrintln("Un-know event");
+                Log.getInstance().info("Un-know event");
                 break;
         }
     }
@@ -141,7 +140,7 @@ public class PathWatcher {
     private Path dir;
 
     void processEvents() {
-        for (; ; ) {
+        for (;;) {
             WatchKey key;
             try {
                 key = watcher.take();
