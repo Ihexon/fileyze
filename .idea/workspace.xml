@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91920ea9-94ea-4fc8-8cb6-52e81dcd77a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Watcher_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/AbstractBootstrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/CommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/ControlOverrides.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/ExcludeHiddenSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/ExcludeHiddenSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/PathWatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/common/DebugUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/common/PrintUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/listener/EventListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/listener/EventListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/other/HelpClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/other/HelpClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/ihexon/utils/control/Control.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +191,9 @@
       <workItem from="1580567214320" duration="27000" />
       <workItem from="1580567284735" duration="7258000" />
       <workItem from="1580626292903" duration="4022000" />
-      <workItem from="1580729623290" duration="5746000" />
+      <workItem from="1580729623290" duration="6959000" />
+      <workItem from="1580799382312" duration="203000" />
+      <workItem from="1581159024180" duration="732000" />
     </task>
     <task id="LOCAL-00001" summary="CommandLine.java">
       <created>1578114538091</created>
@@ -288,29 +277,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="568" height="551" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1580399492340" />
-    <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl" timestamp="1580395279021">
+    <state x="604" y="278" width="1202" height="617" key="FileChooserDialogImpl" timestamp="1580799489894">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="604" y="278" key="FileChooserDialogImpl/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580799489894" />
     <state x="606" y="302" width="1202" height="617" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1580395279021" />
-    <state width="1872" height="206" key="GridCell.Tab.0.bottom" timestamp="1580734978661">
+    <state width="1872" height="206" key="GridCell.Tab.0.bottom" timestamp="1580741357858">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978661" />
+    <state width="1872" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580741357858" />
     <state width="1872" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
-    <state width="1872" height="206" key="GridCell.Tab.0.center" timestamp="1580734978660">
+    <state width="1872" height="206" key="GridCell.Tab.0.center" timestamp="1580741357857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="206" key="GridCell.Tab.0.center/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978660" />
+    <state width="1872" height="206" key="GridCell.Tab.0.center/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580741357857" />
     <state width="1872" height="207" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
-    <state width="1872" height="206" key="GridCell.Tab.0.left" timestamp="1580734978660">
+    <state width="1872" height="206" key="GridCell.Tab.0.left" timestamp="1580741357857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="206" key="GridCell.Tab.0.left/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978660" />
+    <state width="1872" height="206" key="GridCell.Tab.0.left/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580741357857" />
     <state width="1872" height="207" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
-    <state width="1872" height="206" key="GridCell.Tab.0.right" timestamp="1580734978660">
+    <state width="1872" height="206" key="GridCell.Tab.0.right" timestamp="1580741357857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1872" height="206" key="GridCell.Tab.0.right/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580734978660" />
+    <state width="1872" height="206" key="GridCell.Tab.0.right/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580741357857" />
     <state width="1872" height="207" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580626262929" />
     <state width="1920" height="579" key="GridCell.Tab.1.bottom" timestamp="1580402341001">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -328,6 +318,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1920" height="579" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580402341001" />
+    <state x="366" y="153" width="1178" height="759" key="NewModule_or_Project.wizard" timestamp="1580799561130">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="366" y="153" width="1178" height="759" key="NewModule_or_Project.wizard/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580799561130" />
     <state x="710" y="211" width="490" height="627" key="RollbackChangesDialog" timestamp="1580386434942">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -337,10 +331,10 @@
     </state>
     <state x="372" y="39" key="SettingsEditor/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580729651099" />
     <state x="374" y="63" width="1350" height="850" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1580622035255" />
-    <state x="476" y="108" key="com.intellij.ide.util.TipDialog" timestamp="1580729652569">
+    <state x="474" y="84" key="com.intellij.ide.util.TipDialog" timestamp="1580799439765">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="476" y="108" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580729652569" />
+    <state x="474" y="84" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580799439765" />
     <state x="478" y="132" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580626298691" />
     <state x="392" y="410" width="1116" height="248" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579510306256">
       <screen x="0" y="0" width="1920" height="1080" />
