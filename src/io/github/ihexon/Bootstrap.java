@@ -2,7 +2,6 @@ package io.github.ihexon;
 
 import io.github.ihexon.common.ErrorCode;
 import io.github.ihexon.common.FileAppender;
-import io.github.ihexon.common.PrintUtils;
 import io.github.ihexon.other.HelpClass;
 import io.github.ihexon.services.logsystem.Log;
 import io.github.ihexon.utils.control.Control;
@@ -42,12 +41,26 @@ public class Bootstrap extends AbstractBootstrap {
         initControl();
         initLogger();
         if (!Control.getSingleton().showHelp) {
-            PathWatcher pathWatcher = new PathWatcher();
-            pathWatcher.processEvents();
+            StartImpl();
         } else {
-            new HelpClass();
-            System.exit(1);
+            showHelpMessage();
         }
         return rc;
+    }
+
+    private void showHelpMessage() {
+        new HelpClass();
+        System.exit(1);
+    }
+
+
+    private void StartImpl() throws IOException {
+
+//        List<String> excludes = new ArrayList<>();
+//        excludes.add("glob:*.bak"); // ignore backup files
+//        excludes.add("regex:^.*/\\~[^/]*$"); // ignore scratch files
+
+        PathWatcher pathWatcher = new PathWatcher();
+        pathWatcher.processEvents();
     }
 }

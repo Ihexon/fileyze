@@ -2,10 +2,15 @@ package io.github.ihexon.utils.control;
 
 import io.github.ihexon.CommandLine;
 import io.github.ihexon.ControlOverrides;
+import io.github.ihexon.services.logsystem.Log;
+import io.github.ihexon.utils.IncludeExcludeSet;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Control {
     private static Control control = null;
@@ -15,19 +20,22 @@ public class Control {
     public boolean excludeHidden = false;
     public boolean showHelp = true;
     public File logFile = null;
+    public  IncludeExcludeSet<PathMatcher, Path> exclude;
+
 
     public final String DIR = "-d";
-    public final String RECURSE = "-r";
-    public final String EXCLUDEHIDDEN = "--exclude-hidden";
-    public final String HELP0x00 = "-h";
-    public final String HELP0x01 = "--help";
-    public final String VERSION0x00 = "--version";
-    public final String VERSION0x01 = "-v";
-    public final String LOGFILE = "--log";
 
     private void init(CommandLine commandLine) {
+
+        String LOGFILE = commandLine.LOGFILE;
+        String RECURSE = commandLine.RECURSE;
+        String EXCLUDES = commandLine.EXCLUDES_HID;
+        String HELP0x00 = commandLine.HELP0x00;
+        String HELP0x01 = commandLine.HELP0x01;
+        String regex = commandLine.getKeyPair(commandLine.EXCLUDEREGX);
+
         this.recursive = commandLine.getSwitchs(RECURSE);
-        this.excludeHidden = commandLine.getSwitchs(EXCLUDEHIDDEN);
+        this.excludeHidden = commandLine.getSwitchs(EXCLUDES);
         this.dir = getMonitorPath(commandLine);
         this.logFile =
                 commandLine.getKeyPair(LOGFILE) != null
@@ -35,8 +43,31 @@ public class Control {
                         new File(commandLine.getKeyPair(LOGFILE)) : null;
         this.showHelp = commandLine.getSwitchs(HELP0x00);
         this.showHelp = commandLine.getSwitchs(HELP0x01);
+
+        // add regex exclude , params -ex [regex]
+        if (regex != null && regex.length() != 0) {
+            this.exclude = new IncludeExcludeSet<>(PathMatcherSet.class);
+            List<String> excludes = new ArrayList<>();
+            excludes.add(regex);
+            addExcludes(excludes);
+        }
     }
 
+    public void addExcludes(List<String> syntaxAndPatterns) {
+        for (String syntaxAndPattern : syntaxAndPatterns) {
+            addExclude(syntaxAndPattern);
+        }
+    }
+
+    public void addExclude(final String syntaxAndPattern) {
+        if (isDebug)
+            Log.getInstance().info("Adding exclude: [{" + syntaxAndPattern + "}]");
+        addExclude(dir.getFileSystem().getPathMatcher(syntaxAndPattern));
+    }
+
+    public void addExclude(PathMatcher matcher) {
+        exclude.exclude(matcher);
+    }
 
     private Path getMonitorPath(CommandLine commandLine) {
         // the params must have a dir to monitor, like -d [dir], than set showHelp to false.
@@ -67,6 +98,7 @@ public class Control {
      * @param overrides the {@link ControlOverrides}'s reference
      */
     private void init(ControlOverrides overrides) {
+
     }
 
 

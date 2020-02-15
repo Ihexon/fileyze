@@ -29,7 +29,26 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.function.Predicate;
 
-public class NewDirFilter implements Predicate<Path> {
+public class BigFilter implements Predicate<Path> {
+
+    private static BigFilter instance = null;
+
+    private boolean isDebug = Control.getSingleton().isDebug;
+    private boolean excludeHidden = Control.getSingleton().excludeHidden;
+
+
+    public static BigFilter getInstance(){
+        if (instance == null){
+            createInstance();
+        }
+        return instance;
+    }
+
+    private static void createInstance(){
+        if (instance == null){
+            instance = new BigFilter();
+        }
+    }
 
     public boolean isHidden(Path path) {
         try {
@@ -49,32 +68,36 @@ public class NewDirFilter implements Predicate<Path> {
         }
     }
 
+
+
+
+    /**
+     * Return means that the dir is not exclude ,not hidden,
+     * if the dir is subdir , make sure it not link to its
+     * parent dir.
+     */
     @Override
     public boolean test(Path path) {
-        if (Control.getSingleton().excludeHidden && isHidden(path)) {
-            if (Control.getSingleton().isDebug)
-                Log.getInstance().info("test({" + (path.toString()) + "}) -> [Hidden]");
-            return true;
-        }
 
+        //  make sure it not link to its parent dir.
         if (!path.startsWith(Control.getSingleton().dir)) {
-            if (Control.getSingleton().isDebug)
+            if (isDebug)
                 Log.getInstance().info("test({" + path.toString() + "}) -> [!child {" + Control.getSingleton().dir.toString() + "}]");
             return false;
         }
 
-        // HAVE BUG !!!
-//        if (recurseDepth != UNLIMITED_DEPTH) {
-//            int depth = path.getNameCount() - this.path.getNameCount() - 1;
-//
-//            if (depth > recurseDepth) {
-//                if (LOG.isDebugEnabled())
-//                    LOG.debug("test({}) -> [depth {}>{}]", toShortPath(path), depth, recurseDepth);
-//                return false;
-//            }
-//        }
+        // make sure it not hidden dir
+        if (excludeHidden && isHidden(path)) {
+            if (isDebug)
+                Log.getInstance().info("test({" + (path.toString()) + "}) -> [Hidden]");
+            return true;
+        }
 
-		boolean matched = Control.getSingleton().includeExclude.test(path);
-        return matched;
+        // make soure it not in exclude list
+        if (Control.getSingleton().exclude != null) {
+            boolean matched = Control.getSingleton().exclude.test(path);
+            return matched;
+        }
+        return true;
     }
 }

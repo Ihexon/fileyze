@@ -19,6 +19,9 @@ public class EventListenerImpl implements EventListListener {
 		msg.append(event.getType());
 		msg.append("] ");
 		msg.append(event.getPath());
+
+
+
 		if (Files.isRegularFile(event.getPath())) {
 			try {
 				String fileSize = String.format(" (File size=%,d)", Files.size(event.getPath()));

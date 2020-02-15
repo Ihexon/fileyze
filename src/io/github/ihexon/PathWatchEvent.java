@@ -1,17 +1,23 @@
 package io.github.ihexon;
 
-import static java.nio.file.StandardWatchEventKinds.*;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;
+
+import static java.nio.file.StandardWatchEventKinds.*;
 public class PathWatchEvent {
 	private final Path path;
 	private final PathWatchEventType type;
 	public enum PathWatchEventType {
 		ADDED, DELETED, MODIFIED, UNKNOWN
 	}
+
+	/**
+	 * Event of Path occurred
+	 * @param path the path occurred event
+	 * @param event the event type
+	 */
 	public PathWatchEvent(Path path, WatchEvent<Path> event) {
 		this.path = path;
 		if (event.kind() == ENTRY_CREATE) {

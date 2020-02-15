@@ -22,18 +22,20 @@ package io.github.ihexon;
 
 import io.github.ihexon.services.logsystem.Log;
 
+import java.io.File;
 import java.util.Hashtable;
 
 public class CommandLine {
 
     public final String DIR = "-d";
     public final String RECURSE = "-r";
-    public final String EXCLUDEHIDDEN = "--exclude-hidden";
+    public final String EXCLUDES_HID = "-exchid";
     public final String HELP0x00 = "-h";
     public final String HELP0x01 = "--help";
     public final String VERSION0x00 = "--version";
     public final String VERSION0x01 = "-v";
     public final String LOGFILE = "--log";
+    public final String EXCLUDEREGX = "-ex";
 
     private final Hashtable<String, String> keywords = new Hashtable<>();
 
@@ -73,9 +75,9 @@ public class CommandLine {
         boolean result = false;
         if (checkPair(args, DIR, i)) {
             result = true;
-        } else if (checkPair(args, EXCLUDEHIDDEN, i)) {
-            result = true;
         } else if (checkPair(args, LOGFILE, i)) {
+            result = true;
+        } else if (checkPair(args, EXCLUDEREGX, i)) {
             result = true;
         }
         return result;
@@ -99,10 +101,17 @@ public class CommandLine {
             result = true;
         } else if (checkSwitch(args, HELP0x01, i)) {
             result = true;
+        } else if (checkSwitch(args, EXCLUDES_HID, i)) {
+            result = true;
         }
         return result;
     }
 
+    public boolean isValidExistingDirectory(String path) {
+        if (path == null || path.trim().isEmpty()) return false;
+        File file = new File(path);
+        return file.isDirectory();
+    }
 
     synchronized private boolean checkPair(String[] args, String paramName, int i) throws Exception {
         String key = args[i];
@@ -110,16 +119,24 @@ public class CommandLine {
         if (key == null) {
             return false;
         }
-        if (key.equalsIgnoreCase(paramName)) {
-            value = args[i + 1];
 
-            if (value.startsWith("-")) {
-                Log.getInstance().info("Missing parameter for keyword '" + value.trim().toString() + "'");
-                Log.getInstance().info("'" + value.trim().toString() + "'" + " need a avlue");
+        // check the linux path name.
+        if (key.equalsIgnoreCase(DIR)) {
+            value = args[i + 1];
+            // USE REGEX TO TEST PATH, BUT IT BUGGLY
+//            IncludeExclude<String> ie = new IncludeExclude<>(RegexSet.class);
+//            ie.include("^/|(/[a-zA-Z0-9_-]+)+$");
+            if (!isValidExistingDirectory(value.trim())) {
+                Log.getInstance().info("Error parameter  '" +key.trim()+ "'");
+                Log.getInstance().info("The dir is not exist or wrong path name");
                 Log.getInstance().closeAppenders();
                 System.exit(-1);
             }
+//            ie.clear();
+        }
 
+        if (key.equalsIgnoreCase(paramName)) {
+            value = args[i + 1];
             if (value == null) {
                 throw new Exception("Missing parameter for keyword '" + paramName + "'.");
             }
