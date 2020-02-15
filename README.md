@@ -1,6 +1,6 @@
 # Watcher
 
-Watcher is a simple file status monitor service
+Watcher is a simple file status monitor service.
 
 ## usage
 
@@ -34,8 +34,14 @@ java -jar Watchme.jar -r -d $PATH --log /tmp/log
 
 ## Contribute
 
+It just a TOY I guess, but **remember**: 
+
+ 1. **KEEP IT F**K SIMPLE,CLEAN,STUPID**
+ 2. **NO F\*\*KING COMPLEX CODE PLEASE**
+
 Platform **JDK >= 8**
 
-Recommend to Use Intellij IDEA, ISSUE ME PLEASE
+Recommend to Use Intellij IDEA,PLEASE ISSUE
+
 
 Contributer: [IHEXON](https://github.com/ihexon), [FlyingMcDonald](https://github.com/FlyingMcDonald)
