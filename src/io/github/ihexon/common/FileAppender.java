@@ -66,22 +66,6 @@ public class FileAppender extends WriterAppender {
 		writeHeader();
 	}
 
-	// DO NOT USE !!!
-	public void activateOptions() {
-		if (fileName != null) {
-			try {
-				setFile(fileName, append, bufferedIO, bufferSize);
-			} catch (java.io.IOException e) {
-				System.err.println("setFile(" + fileName + "," + append + ") call failed." + " " + ErrorCode.FILE_OPEN_FAILURE);
-				e.printStackTrace();
-			}
-		} else {
-			String s1 = "File option not set for appender [" + name + "].";
-			String s2 = "Are you using FileAppender instead of ConsoleAppender?";
-			System.err.println(s1);
-			System.err.println(s2);
-		}
-	}
 
 
 	/**

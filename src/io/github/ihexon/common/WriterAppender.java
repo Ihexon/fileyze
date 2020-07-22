@@ -48,7 +48,7 @@ public class WriterAppender extends AppenderSkeleton {
 
         sbuf.setLength(0);
 //        sbuf.append(event.getLevel().toString());
-        sbuf.append("- ");
+        sbuf.append("  ");
         sbuf.append(event.getRenderedMessage());
         sbuf.append(LINE_SEP);
         return sbuf.toString();
