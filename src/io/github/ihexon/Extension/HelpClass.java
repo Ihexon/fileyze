@@ -18,10 +18,12 @@
  * This Copyright copy from shadowsocks-libev. with little modified
  **************************************************************************************************/
 
-package io.github.ihexon.other;
+package io.github.ihexon.Extension;
 import io.github.ihexon.services.logsystem.Log;
 
 public class HelpClass {
+
+	private static final Log logger = Log.getInstance();
 
 	public HelpClass(){
 		StringBuilder msg = new StringBuilder();
@@ -39,7 +41,7 @@ public class HelpClass {
 					"BY: ZZH & YYF, 2019 JJUSEC. \n" +
 					"Our friend ship for ever -_<\n"
 		);
-		Log.getInstance().info(msg.toString());
-		Log.getInstance().closeAppenders();
+		logger.info(msg.toString());
+		logger.closeAppenders();
 	}
 }

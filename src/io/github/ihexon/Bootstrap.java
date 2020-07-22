@@ -2,7 +2,7 @@ package io.github.ihexon;
 
 import io.github.ihexon.common.ErrorCode;
 import io.github.ihexon.common.FileAppender;
-import io.github.ihexon.other.HelpClass;
+import io.github.ihexon.Extension.HelpClass;
 import io.github.ihexon.services.logsystem.Log;
 import io.github.ihexon.utils.control.Control;
 

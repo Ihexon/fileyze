@@ -1,5 +1,7 @@
 package io.github.ihexon.spi;
 
+import io.github.ihexon.common.Priority;
+
 /**
  * The internal representation of logging events of Watcher.
  *
@@ -12,6 +14,8 @@ package io.github.ihexon.spi;
  */
 
 public class LoggingEvent {
+
+    transient public Priority level;
 
     private static long startTime = System.currentTimeMillis();
 
@@ -34,7 +38,8 @@ public class LoggingEvent {
         return threadName;
     }
 
-    public LoggingEvent(Object message, Throwable throwable) {
+    public LoggingEvent(Priority level, Object message, Throwable throwable) {
+        this.level = level;
         this.message = message;
         if (throwable != null) {
             this.throwableInfo = new ThrowableInformation(throwable);

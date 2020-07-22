@@ -20,9 +20,7 @@
 
 package io.github.ihexon.services.logsystem;
 
-import io.github.ihexon.common.Appender;
-import io.github.ihexon.common.ConsoleAppender;
-import io.github.ihexon.common.FileAppender;
+import io.github.ihexon.common.*;
 import io.github.ihexon.logutils.AppenderAttachableImpl;
 import io.github.ihexon.spi.LoggingEvent;
 
@@ -46,6 +44,7 @@ public class Log {
 
     /**
      * You should use {@link #addAppender(Appender)} to add new {@link Appender}
+     *
      * @param newAppender the new {@link Appender} to be add.
      * @see AppenderAttachableImpl
      */
@@ -63,13 +62,21 @@ public class Log {
     }
 
     public void info(Object message) {
-        Logger(message, null);
+        forcedLog(Level.INFO, message, null);
     }
 
-    public
-    void info(Object message, Throwable t) {
-        Logger(message, t);
+    public void info(Object message, Throwable t) {
+        forcedLog(Level.INFO, message, t);
     }
+
+    public void warn(Object message, Throwable t) {
+        forcedLog(Level.WARN, message, t);
+    }
+
+    public void error(Object message, Throwable t) {
+        forcedLog(Level.ERROR, message, t);
+    }
+
 
     public void closeAppenders() {
         if (aai != null) {
@@ -77,8 +84,8 @@ public class Log {
         }
     }
 
-    private void Logger(Object message, Throwable throwable) {
-        callAppenders(new LoggingEvent(message, throwable));
+    private void forcedLog(Priority level, Object message, Throwable throwable) {
+        callAppenders(new LoggingEvent(level, message, throwable));
     }
 
     private void callAppenders(LoggingEvent e) {
