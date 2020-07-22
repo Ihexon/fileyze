@@ -33,7 +33,11 @@ public class HelpClass {
 					"--exchid  			   	: exclude the hidden directory\n" +
 					"--log	[dir]			: output events to log file\n" +
 					"--help & -h        	: show help\n"+
-					"-ex [syntax:pattern]   : exclude path or file with pattern [syntax:pattern]\n"
+					"-ex [syntax:pattern]   : exclude path or file with pattern [syntax:pattern]\n" +
+					"\n"+
+					"\n"+
+					"BY: ZZH & YYF, 2019 JJUSEC. \n" +
+					"Our friend ship for ever -_<\n"
 		);
 		Log.getInstance().info(msg.toString());
 		Log.getInstance().closeAppenders();

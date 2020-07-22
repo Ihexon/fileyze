@@ -1,32 +1,64 @@
 package io.github.ihexon.spi;
+
+/**
+ * The internal representation of logging events of Watcher.
+ *
+ * <p> Origin code from apache-log4j </p>
+ *
+ * @author Ceki G&uuml;lc&uuml;
+ * @author James P.
+ * @author ZZH
+ * @since v1.0
+ */
+
 public class LoggingEvent {
 
-	transient private Object message;
-	private transient Throwable throwable;
-	public final long timeStamp;
+    private static long startTime = System.currentTimeMillis();
 
-	public LoggingEvent(Object message, Throwable throwable) {
-		this.message = message;
-		if (throwable != null) {
-			this.throwable = throwable;
-		}
-		timeStamp = System.currentTimeMillis();
-	}
+    transient private Object message;
+    public final long timeStamp;
+    private ThrowableInformation throwableInfo;
+    private String threadName;
 
-	private String renderedMessage = null;
 
-	public String getRenderedMessage() {
-		if (renderedMessage == null && message != null) {
-			if (message instanceof String)
-				renderedMessage = (String) message;
-		}
-		return renderedMessage;
-	}
+    /**
+     * Returns the time when the application started, in milliseconds
+     */
+    public static long getStartTime() {
+        return startTime;
+    }
 
-	public String getThrowableStrRep() {
-		if(throwable ==  null)
-			return null;
-		else
-			return throwable.getMessage();
-	}
+    public String getThreadName() {
+        if (threadName == null)
+            threadName = (Thread.currentThread()).getName();
+        return threadName;
+    }
+
+    public LoggingEvent(Object message, Throwable throwable) {
+        this.message = message;
+        if (throwable != null) {
+            this.throwableInfo = new ThrowableInformation(throwable);
+        }
+        timeStamp = System.currentTimeMillis();
+    }
+
+    private String renderedMessage = null;
+
+    public String getRenderedMessage() {
+        if (renderedMessage == null && message != null) {
+            if (message instanceof String)
+                renderedMessage = (String) message;
+        }
+        return renderedMessage;
+    }
+
+    /**
+     * Return this event's throwable's string[] representaion.
+     */
+    public String[] getThrowableStrRep() {
+        if (throwableInfo == null)
+            return null;
+        else
+            return throwableInfo.getThrowableStrRep();
+    }
 }

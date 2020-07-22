@@ -30,7 +30,6 @@ public class Log {
 
     private static Log instance = null;
     private ConsoleAppender ca;
-    private FileAppender fa;
     private AppenderAttachableImpl aai;
 
     public static Log getInstance() {
@@ -65,6 +64,11 @@ public class Log {
 
     public void info(Object message) {
         Logger(message, null);
+    }
+
+    public
+    void info(Object message, Throwable t) {
+        Logger(message, t);
     }
 
     public void closeAppenders() {

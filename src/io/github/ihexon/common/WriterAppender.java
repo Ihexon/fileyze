@@ -6,149 +6,167 @@ import java.io.*;
 
 public class WriterAppender extends AppenderSkeleton {
 
-	protected boolean immediateFlush = true;
-	protected String encoding;
-	protected QuietWriter qw;
+    protected boolean immediateFlush = true;
+    protected String encoding;
+    protected QuietWriter qw;
 
-	public WriterAppender() {
-	}
+    public final static String LINE_SEP = System.getProperty("line.separator");
+    StringBuffer sbuf = new StringBuffer(128);
 
-	public WriterAppender(OutputStream os) {
-		this(new OutputStreamWriter(os));
-	}
+    public WriterAppender() {
+    }
 
-	public WriterAppender(Writer writer) {
-		this.setWriter(writer);
-	}
+    public WriterAppender(OutputStream os) {
+        this(new OutputStreamWriter(os));
+    }
 
-	public void setImmediateFlush(boolean value) {
-		immediateFlush = value;
-	}
+    public WriterAppender(Writer writer) {
+        this.setWriter(writer);
+    }
 
-	public boolean getImmediateFlush() {
-		return immediateFlush;
-	}
+    public void setImmediateFlush(boolean value) {
+        immediateFlush = value;
+    }
 
-	/**
-	 * This method is called by the {@link AppenderSkeleton#doAppend}
-	 * method.
-	 */
-	public void append(LoggingEvent event) {
-		if (! checkEntryConditions()) {
-			return;
-		}
-		subAppend(event);
-	}
+    public boolean getImmediateFlush() {
+        return immediateFlush;
+    }
 
-	public final static String LINE_SEP = System.getProperty("line.separator");
-
-	protected void subAppend(LoggingEvent event) {
-		this.qw.write(new Formater().format(event));
-		String s = event.getThrowableStrRep();
-		this.qw.write(s);
-		if (shouldFlush(event)) {
-			this.qw.flush();
-		}
-	}
-
-	protected boolean shouldFlush(final LoggingEvent event) {
-		return immediateFlush;
-	}
+    /**
+     * This method is called by the {@link AppenderSkeleton#doAppend}
+     * method.
+     */
+    public void append(LoggingEvent event) {
+        if (!checkEntryConditions()) {
+            return;
+        }
+        subAppend(event);
+    }
 
 
-	protected boolean checkEntryConditions() {
-		if (this.closed) {
-			System.err.println("Not allowed to write to a closed appender.");
-			return false;
-		}
+    public String format(LoggingEvent event) {
 
-		if (this.qw == null) {
-			System.err.println("No output stream or file set for the appender named [" +
-					name + "].");
-			return false;
-		}
-		return true;
-	}
+        sbuf.setLength(0);
+//        sbuf.append(event.getLevel().toString());
+        sbuf.append("- ");
+        sbuf.append(event.getRenderedMessage());
+        sbuf.append(LINE_SEP);
+        return sbuf.toString();
+    }
 
-	protected void reset() {
-		closeWriter();
-		this.qw = null;
-		//this.tp = null;
-	}
+    protected void subAppend(LoggingEvent event) {
+        this.qw.write(this.format(event));
+        String[] s = event.getThrowableStrRep();
+        if (s != null) {
+            int len = s.length;
+            for (int i = 0; i < len; i++) {
+                this.qw.write(s[i]);
+                this.qw.write(LINE_SEP);
+            }
+        }
+        if (shouldFlush(event)) {
+            this.qw.flush();
+        }
+    }
 
-	public
-	synchronized void close() {
-		if (this.closed)
-			return;
-		this.closed = true;
-		writeFooter();
-		reset();
-	}
-
-	private void writeFooter() {
-		String f = "----------- WatchMe End -----------\n";
-		if (f != null && this.qw != null) {
-			this.qw.write(f);
-			this.qw.flush();
-		}
-	}
-
-	protected void closeWriter() {
-		if (qw != null) {
-			try {
-				qw.close();
-			} catch (IOException e) {
-				if (e instanceof InterruptedIOException) {
-					Thread.currentThread().interrupt();
-				}
-				System.err.println("Could not close " + qw);
-				System.err.println(e.getMessage());
-			}
-		}
-	}
-
-	public synchronized void setWriter(Writer writer) {
-		reset();
-		this.qw = new QuietWriter(writer);
-		writeHeader();
-	}
-
-	protected void writeHeader() {
-		String h = "----------- WatchMe Start -----------\n";
-		if (h != null && this.qw != null)
-			this.qw.write(h);
-	}
+    protected boolean shouldFlush(final LoggingEvent event) {
+        return immediateFlush;
+    }
 
 
-	protected OutputStreamWriter createWriter(OutputStream os) {
-		OutputStreamWriter retval = null;
-		String enc = getEncoding();
-		if (enc != null) {
-			try {
-				retval = new OutputStreamWriter(os, enc);
-			} catch (IOException e) {
-				if (e instanceof InterruptedIOException) {
-					Thread.currentThread().interrupt();
-				}
-				System.err.println("Error initializing output writer.");
-				System.err.println("Unsupported encoding?");
-			}
-		}
-		if (retval == null) {
-			retval = new OutputStreamWriter(os);
-		}
-		return retval;
-	}
+    protected boolean checkEntryConditions() {
+        if (this.closed) {
+            System.err.println("Not allowed to write to a closed appender.");
+            return false;
+        }
 
-	public String getEncoding() {
-		return encoding;
-	}
+        if (this.qw == null) {
+            System.err.println("No output stream or file set for the appender named [" +
+                    name + "].");
+            return false;
+        }
+        return true;
+    }
 
-	public void setEncoding(String value) {
-		encoding = value;
-	}
+    protected void reset() {
+        closeWriter();
+        this.qw = null;
+        //this.tp = null;
+    }
 
-	@Override
-	public void activateOptions() {
-	}
+    public
+    synchronized void close() {
+        if (this.closed)
+            return;
+        this.closed = true;
+        writeFooter();
+        reset();
+    }
+
+    private void writeFooter() {
+        String f = "----------- WatchMe End -----------\n";
+        if (f != null && this.qw != null) {
+            this.qw.write(f);
+            this.qw.flush();
+        }
+    }
+
+    protected void closeWriter() {
+        if (qw != null) {
+            try {
+                qw.close();
+            } catch (IOException e) {
+                if (e instanceof InterruptedIOException) {
+                    Thread.currentThread().interrupt();
+                }
+                System.err.println("Could not close " + qw);
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public synchronized void setWriter(Writer writer) {
+        reset();
+        this.qw = new QuietWriter(writer);
+        writeHeader();
+    }
+
+    protected void writeHeader() {
+        String h = "----------- WatchMe Start -----------\n";
+        if (h != null && this.qw != null)
+            this.qw.write(h);
+    }
+
+
+    protected OutputStreamWriter createWriter(OutputStream os) {
+        OutputStreamWriter retval = null;
+        String enc = getEncoding();
+        if (enc != null) {
+            try {
+                retval = new OutputStreamWriter(os, enc);
+            } catch (IOException e) {
+                if (e instanceof InterruptedIOException) {
+                    Thread.currentThread().interrupt();
+                }
+                System.err.println("Error initializing output writer.");
+                System.err.println("Unsupported encoding?");
+            }
+        }
+        if (retval == null) {
+            retval = new OutputStreamWriter(os);
+        }
+        return retval;
+    }
+
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String value) {
+        encoding = value;
+    }
+
+    @Override
+    public void activateOptions() {
+    }
 }
