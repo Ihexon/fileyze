@@ -1,5 +1,7 @@
 # Watcher
 
+
+ 
 Watcher is a simple file status monitor service.
 ## usage
 
@@ -74,6 +76,9 @@ java -jar Watchme.jar -r -d $PATH --log /tmp/log -ex glob:**.exe
 Platform **JDK >= 8**
 
 Recommend to Use Intellij IDEA
+Using jprofiler [Java profiler]( https://www.ej-technologies.com/products/jprofiler/overview.html)
 
 
 Contributer: [IHEXON](https://github.com/ihexon), [FlyingMcDonald](https://github.com/FlyingMcDonald)
+
+
